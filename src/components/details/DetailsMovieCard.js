@@ -4,36 +4,34 @@ import { Card, CardImg, CardText, CardBody,
 
 class DetailsMovieCard extends Component {
   render() {
+      
+    const {picture, title, synopsis, button, director, genre01, genre02, genre03, date, status} = this.props;
+
     return (
-      <div>
-      <Card>
-        <CardImg top src="http://lorempixel.com/output/nightlife-h-c-380-500-4.jpg" alt="Card image cap" className="fluid" style={{maxWidth : "540px",}}/>
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <div className="card mb-3" style={{maxWidth : "540px",}}>
-        <div className="row no-gutters">
-          <div className="col-md-4">
-            <img src="http://lorempixel.com/output/nightlife-h-c-380-500-4.jpg" className="card-img" alt="..." />
+    <div>
+      <div className="card m-4">
+        <div className="row no-gutters m-3">
+          <div className="col-md-4 col-lg-6">
+            <img src={picture} className="card-img my-card-img" alt="" />
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+          <div className="col-md-8 col-lg-6 p-2">
+            <div className="card-body my-card-body p-0 pl-3">
+              <h2 className="card-title pb-4">{title}</h2>
+              <h5 className="pb-4">
+                Genre: <span className="my-genre">{genre01}</span><span className="my-genre">{genre02}</span><span className="my-genre">{genre03}</span></h5>
+              <p>Directed by: <span className='font-weight-bold'>{director}</span></p>             
+              <p>Status: <span className='font-weight-bold'>{status}</span></p>
+              <p className="card-text"><small className="text-muted">Release date: {date}</small></p>
+              <p className="card-text">{synopsis}</p>              
+              <a href="http://www.google.com" className="btn btn-primary my-btn my-3">Add to my favorits</a>
+              <a href="http://www.google.com" className="btn btn-primary my-btn mt-3">Add to watch later</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    );
-  }
+    )
+}
 }
 
 export default DetailsMovieCard;

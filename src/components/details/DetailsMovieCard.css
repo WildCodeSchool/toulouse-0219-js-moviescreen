@@ -1,3 +1,27 @@
 * {
     color: #444444;
 }
+
+.my-card-img img{
+    width: 600px;
+    height: 750px;
+}
+
+.my-btn {
+    display: block;
+}
+
+.my-card-body {
+    height: 100%;
+}
+
+.my-genre {
+    padding: 5px 10px;
+    border: solid 0.5px #888888;
+    background-color: #f4f8ff;
+    margin: 5px;
+    font-weight: normal;
+}
+
+
+
