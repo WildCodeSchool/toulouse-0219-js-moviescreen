@@ -33,30 +33,46 @@ export default class Example extends React.Component {
           <NavbarBrand href="/">reactstrap</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+            <Nav className="ml-center" navbar>
+            <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Option
+                  Catégories
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Action
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Comédie
                   </DropdownItem>
-                  <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    Science-fiction
                   </DropdownItem>
+                  <DropdownItem>
+                    
+                  </DropdownItem>
+                  <DropdownItem>
+                    Action
+                  </DropdownItem>
+                  <DropdownItem>
+                    Comédie
+                  </DropdownItem>
+                  
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="">Conseil de la semaine</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="">A regarder</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="">Mes Favoris</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="">Je ne sais pas quoi regarder</NavLink>
+              </NavItem>
+              
             </Nav>
           </Collapse>
         </Navbar>
