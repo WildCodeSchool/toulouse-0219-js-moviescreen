@@ -7,10 +7,6 @@
     height: 750px;
 }
 
-.my-btn {
-    display: block;
-}
-
 .my-card-body {
     height: 100%;
 }
@@ -30,5 +26,10 @@
     left: 180px;    
 }
 
+/* .my-overview {
+    height: 360px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
 
 
