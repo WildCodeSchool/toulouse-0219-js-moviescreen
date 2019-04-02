@@ -72,7 +72,9 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="">Je ne sais pas quoi regarder</NavLink>
               </NavItem>
-              
+              <NavItem>
+                <NavLink href=""> <i class="fab fa-facebook fa-2x"></i> <i class="fab fa-instagram fa-2x"></i> <i class="fab fa-twitter fa-2x"></i></NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
