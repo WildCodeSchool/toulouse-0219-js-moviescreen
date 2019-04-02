@@ -1,29 +1,33 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class Footer extends React.Component {
   render() {
     return (
-      <Table dark>
-        
-        <tbody>
-          
-            
-          
-          <tr>
-            <td>Catégories</td>
-            <td>Jacob</td>
-            
-          </tr>
-          <tr>
-            <td>Contact Us</td>
-            <td> Crédits</td>
-            
-          </tr>
-        </tbody>
-      </Table>
+        <footer className="fond-foot">
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <p>Catégories</p>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <p>Contact Us</p>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <p>Réseaux sociaux</p>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <p>Crédit</p>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <p>Conseil de la semaine</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
-  }
+    }
 }
+  
 
 
