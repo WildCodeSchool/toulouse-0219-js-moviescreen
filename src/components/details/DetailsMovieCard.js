@@ -18,11 +18,19 @@ class DetailsMovieCard extends Component {
       video,
       trailer,
       vote_average,
-      name
+      name,
+      id,
     } = this.props;
 
     return (
       <div>
+        <div className="container">
+          <div className="row">
+            <div className="col ml-4 mt-4">
+              <h2>{original_title}</h2>
+            </div>
+          </div>
+        </div>
         <div className="card m-4">
           <div className="row no-gutters m-3">
             <div className="col-md-4 col-lg-6">
@@ -44,7 +52,7 @@ class DetailsMovieCard extends Component {
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
                 <h2 className="card-title pb-4">{original_title}</h2>
                 <h5 className="pb-4">
-                  Genre: 
+                  Genre:
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>

@@ -1,11 +1,15 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import DetailsMovieCard from './components/details/DetailsMovieCard';
-import './App.css';
-import './components/details/DetailsMovieCard.css';
 import popular from './popular-movies.json';
 import genres from './genres.json';
+import reviews from './reviews.json';
+import casting from './casting.json';
+import DetailsMovieCard from './components/details/DetailsMovieCard';
+import Reviews from './components/details/Reviews';
+import Casting from './components/details/Casting';
 
+import './components/details/DetailsMovieCard.css';
+import './App.css';
 
 const movies = [
   {
@@ -15,22 +19,9 @@ const movies = [
     date: 'February 22, 2019',
     status: 'Released',
     trailer: 'http://www.google.com',
+    avatar: 'https://www.themoviedb.org/u/cherry19',
   },
 ];
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <div className="row">
-//           <div className="container">
-//             <DetailsMovieCard {...popular.results[0]} {...movies[0]} {...geners.genres.name} />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 class App extends Component {
   render() {
@@ -42,12 +33,15 @@ class App extends Component {
         <div className="row">
           <div className="container">
             <DetailsMovieCard {...popular.results[0]} {...movies[0]} {...movieGenres[0]} />
+            <Reviews {...reviews.results[0]} />
+            <Casting {...casting.cast[0]} />
           </div>
         </div>
       </div>
     );
   }
 }
+
 
 export default App;
 
@@ -64,7 +58,7 @@ export default App;
 //           <div className="container">
 //             {popular.results.map(singleResult => {
 //               return (
-//                 <DetailsMovieCard {...singleResult} {...movies[0]} {...genres.genres[0]} />
+//                 <DetailsMovieCard {...singleResult} {...movies[0]} {...movieGenres[0]} />
 //               )
 //             })
 //             }
