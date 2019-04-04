@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import {
   TabContent,
@@ -9,7 +8,10 @@ import {
   Row,
   Col
 } from 'reactstrap';
+
 import classnames from 'classnames';
+import reviews from './reviews.json';
+
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Reviews extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: 0
     };
   }
 
@@ -30,8 +32,14 @@ class Reviews extends React.Component {
   }
 
   render() {
-    const { author, content } = this.props;
-
+    function partage() {
+      const myArr = [];
+      for (let i = 0; i < 3; i += 1) {
+        myArr.push(reviews.results[i]);
+      }
+      return myArr;
+    }
+    const review = partage(reviews);
     return (
       <div>
         <div className="container">
@@ -42,44 +50,32 @@ class Reviews extends React.Component {
           </div>
         </div>
         <div className="card m-4">
-
           <Nav tabs>
-            <NavItem className="py-3 pl-3">
-              <NavLink
-                className={classnames({ active: this.state.activeTab === '1' })}
-                onClick={() => {
-                  this.toggle('1');
-                }}
-              >
-                {author}
-              </NavLink>
-            </NavItem>
-            <NavItem className="py-3">
-              <NavLink
-                className={classnames({ active: this.state.activeTab === '2' })}
-                onClick={() => {
-                  this.toggle('2');
-                }}
-              >
-                {author}
-              </NavLink>
-            </NavItem>
+            {review.map(({ author }, index) => (
+              <NavItem className="py-3 pl-3">
+                <NavLink
+                  className={classnames({
+                    active: this.state.activeTab === index
+                  })}
+                  onClick={() => {
+                    this.toggle(index);
+                  }}
+                >
+                  {author}
+                </NavLink>
+              </NavItem>
+            ))}
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
-            <TabPane tabId="1" className="p-4">
-              <Row>
-                <Col sm="12" className="">
-                  <p>{content}</p>
-                </Col>
-              </Row>
-            </TabPane>
-            <TabPane tabId="2" className="p-4">
-              <Row>
-                <Col sm="12">
-                  <p>{content}</p>
-                </Col>
-              </Row>
-            </TabPane>
+            {review.map(({ content }, index) => (
+              <TabPane tabId={index} className="p-4">
+                <Row>
+                  <Col sm="12" className="">
+                    <p>{content}</p>
+                  </Col>
+                </Row>
+              </TabPane>
+            ))}
           </TabContent>
         </div>
       </div>
