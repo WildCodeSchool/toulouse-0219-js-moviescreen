@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import popular from './popular-movies.json';
 import genres from './genres.json';
-import reviews from './reviews.json';
-import casting from './casting.json';
+import reviews from './components/details/reviews.json';
+import casting from './components/details/casting.json';
 import DetailsMovieCard from './components/details/DetailsMovieCard';
 import Reviews from './components/details/Reviews';
 import Casting from './components/details/Casting';
@@ -42,29 +42,4 @@ class App extends Component {
   }
 }
 
-
 export default App;
-
-// RESULTS MAPPED
-
-// class App extends Component {
-//   render() {
-//     const movieGenres = genres.genres.filter(
-//       genre => popular.results[0].genre_ids.includes(genre.id)
-//     );
-//     return (
-//       <div>
-//         <div className="row">
-//           <div className="container">
-//             {popular.results.map(singleResult => {
-//               return (
-//                 <DetailsMovieCard {...singleResult} {...movies[0]} {...movieGenres[0]} />
-//               )
-//             })
-//             }
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }

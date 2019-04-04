@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import casting from './casting.json';
 import {
   Card,
   Button,
@@ -7,10 +8,19 @@ import {
   CardText,
   CardGroup,
   CardSubtitle,
-  CardBody,
+  CardBody
 } from "reactstrap";
 
-const Casting = props => {
+function partage() {
+  const myArr = [];
+  for (let i = 0; i < 5; i += 1) {
+    myArr.push(casting.cast[i]);
+  }
+  return myArr;
+}
+
+const Casting = () => {
+  const actor = partage(casting);
 
   return (
     <div>
@@ -23,93 +33,20 @@ const Casting = props => {
       </div>
       <div className="card m-4">
         <CardGroup>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.profile_path}`}
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.profile_path}`}
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.profile_path}`}
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.profile_path}`}
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.profile_path}`}
-              alt="Card image cap"
-            />
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
+          {actor.map(({ profile_path, name, character }) => (
+            <Card>
+              <CardImg
+                top
+                width="100%"
+                src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${profile_path}`}
+                alt="Card image cap"
+              />
+              <CardBody>
+                <CardTitle className="h5 font-weight-bold">{name}</CardTitle>
+                <CardSubtitle>{character}</CardSubtitle>
+              </CardBody>
+            </Card>
+          ))}
         </CardGroup>
       </div>
     </div>
