@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+
+
+
+
+
+.moviecard {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.upcomingslidercontainer {
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+.theaterslidercontainer {
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+
+
+

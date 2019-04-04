@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Card, Button, CardImg, CardTitle, CardDeck, CardBody } from 'reactstrap';
 import info from './../popular-movies.json';
 
-// const Travels = () => results.map(travel => (
-//   <Travel title={travel.title} poster_path={travel.poster_path}  />  ));
 
-// export default Travels;
 
 const CardCarousel = (props) => {
 
@@ -20,9 +17,10 @@ const CardCarousel = (props) => {
                 <CardTitle>{title}</CardTitle>
                 <Button>Button</Button>
               </CardBody>
-            </Card>))
+            </Card>
+            ))
         }
-        </CardDeck>
+      </CardDeck>
     </div>
   );
 };

@@ -1,62 +1,6 @@
 {
   "results":[
-    {
-      "vote_count":1196,
-      "id":166428,
-      "video":false,
-      "vote_average":7.7,
-      "title":"Dragons 3 : Le monde caché",
-      "popularity":735.842,
-      "poster_path":"\/lsifceBTpDx1KsdVtC2Xh1XQAgc.jpg",
-      "original_language":"en",
-      "original_title":"How to Train Your Dragon: The Hidden World",
-      "genre_ids":[
-        16,
-        10751,
-        12
-      ],
-      "backdrop_path":"\/h3KN24PrOheHVYs9ypuOIdFBEpX.jpg",
-      "adult":false,
-      "overview":"Ce qui avait commencé comme une amitié improbable entre un jeune Viking et un redoutable dragon Fury Nocturne est devenu une épique trilogie retraçant leurs vies. Dans ce nouveau chapitre, Harold et Krokmou vont enfin découvrir leurs véritables destinées : être le chef de Berk au côté d’Astrid et, en tant que dragon, être le leader de son espèce. Alors qu’ils réalisent leurs rêves de vivre en paix entre Vikings et dragons, une sombre menace planant sur le village et l’apparition d’une femelle Fury Nocturne vont mettre à mal leurs liens d’amitié comme jamais auparavant.",
-      "release_date":"2019-01-03"
-    },
-    {
-      "vote_count":550,
-      "id":458723,
-      "video":false,
-      "vote_average":7.4,
-      "title":"Us",
-      "popularity":371.775,
-      "poster_path":"\/5l4UPVn98JCL4oeIpDRHf6M5n3y.jpg",
-      "original_language":"en",
-      "original_title":"Us",
-      "genre_ids":[
-        53,
-        27
-      ],
-      "backdrop_path":"\/jNUCddkM1fjYcFIcEwFjc7s2H4V.jpg",
-      "adult":false,
-      "overview":"Des parents emmènent leurs enfants dans leur maison secondaire près d'une plage afin de se détendre et de se déconnecter. Des amis les rejoignent. Au fur et à mesure que la nuit arrive, la sérénité se transforme en tension. Lorsque des invités - qui n'étaient pas prévus - se joignent au groupe, l'agitation palpable dégénère en chaos.",
-      "release_date":"2019-03-14"
-    },
-    {
-      "vote_count":104,
-      "id":450001,
-      "video":false,
-      "vote_average":5,
-      "title":"Master Z : The Ip Man Legacy",
-      "popularity":107.618,
-      "poster_path":"\/2WfjB6FUDTIBVI2y02UGbnHR82s.jpg",
-      "original_language":"cn",
-      "original_title":"葉問外傳：張天志",
-      "genre_ids":[
-        28
-      ],
-      "backdrop_path":"\/grtVFGJ4ts0nDAPpc1JWbBoVKTu.jpg",
-      "adult":false,
-      "overview":"Après avoir été vaincu par le Maître Ip Man, Cheung Tin Chi, blessé dans son orgueil, mène une vie modeste, se consacrant à son épicerie et à l’éducation de son fils. En voulant secourir son ex-fiancée, le challenger de Ip va devenir la cible des triades de Hong-Kong, menées par le cruel Kit Kang et sa soeur Kwan. Il devra affronter le funeste Owen Davidson, un homme d’affaires américain au coeur du commerce de l’héroïne pour vaincre tous ses ennemis, sauver sa fierté et gagner le respect de ses pairs…",
-      "release_date":"2018-12-20"
-    },
+
     {
       "vote_count":0,
       "id":299534,
@@ -76,28 +20,6 @@
       "adult":false,
       "overview":"Après leur défaite face au Titan Thanos qui dans le film précédent s'est approprié toutes les pierres du Gant de l'infini , les Avengers et les Gardiens de la Galaxie ayant survécu à son claquement de doigts qui a pulvérisé « la moitié de toute forme de vie dans l'Univers », Captain America, Thor, Bruce Banner, Natasha Romanoff, War Machine, Tony Stark, Nébula et Rocket, vont essayer de trouver une solution pour ramener leurs coéquipiers disparus et vaincre Thanos en se faisant aider par Ronin alias Clint Barton, Captain Marvel et Ant-Man.",
       "release_date":"2019-04-24"
-    },
-    {
-      "vote_count":30,
-      "id":400157,
-      "video":false,
-      "vote_average":5.7,
-      "title":"Le Parc des merveilles",
-      "popularity":76.465,
-      "poster_path":"\/elUcnFlkQnx8ucyCTCWIi6HRa3w.jpg",
-      "original_language":"en",
-      "original_title":"Wonder Park",
-      "genre_ids":[
-        35,
-        16,
-        12,
-        10751,
-        14
-      ],
-      "backdrop_path":"\/nJyAdKPnW15IAvC6sLBTE0lp6Dv.jpg",
-      "adult":false,
-      "overview":"Une petite fille et des animaux se retrouvent dans un parc d'attractions magique.",
-      "release_date":"2019-03-14"
     },
     {
       "vote_count":30,
