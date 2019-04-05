@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Favorite from './components/Favorite';
 import './App.css';
 import movies from './popular-movies';
-import Bouton from './bouton';
+import Bouton from './components/bouton';
 
 class App extends Component {
   constructor(props) {
