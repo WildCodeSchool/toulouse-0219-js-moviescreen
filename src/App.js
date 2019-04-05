@@ -7,8 +7,8 @@ import casting from './components/details/casting.json';
 import DetailsMovieCard from './components/details/DetailsMovieCard';
 import Reviews from './components/details/Reviews';
 import Casting from './components/details/Casting';
-
 import './components/details/DetailsMovieCard.css';
+
 import './App.css';
 
 const movies = [
