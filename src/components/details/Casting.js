@@ -60,6 +60,8 @@ class Casting extends React.Component {
               <Card>
                 {this.props.buttonLabel}
                 <CardImg
+                  // DEVE ESSERE QUALCOSA COSI'
+                  // onClick={() => this.toggle(actor.id)}
                   onClick={this.toggle}
                   top
                   width="100%"
