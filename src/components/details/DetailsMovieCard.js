@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import trailers from './trailers.json';
 
 class DetailsMovieCard extends Component {
   render() {
@@ -20,6 +21,7 @@ class DetailsMovieCard extends Component {
       vote_average,
       name,
       id,
+      key,
     } = this.props;
 
     return (
@@ -40,11 +42,12 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
-              <a href={trailer} target="_blank">
+              <a href={`https://www.youtube.com/watch?v=${trailers.results[0].key}`} target="_blank">
                 <img
                   src="https://cdn1.iconfinder.com/data/icons/social-media-glossy/512/7-player_windows_media_player_video_social-512.png"
                   className="my-video-player"
-                  alt=""
+                  alt="Click to view the trailer"
+                  title="Click to view the trailer"
                 />
               </a>
             </div>

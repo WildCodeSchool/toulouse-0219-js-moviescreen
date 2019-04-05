@@ -52,7 +52,7 @@ class Reviews extends React.Component {
         <div className="card m-4">
           <Nav tabs>
             {review.map(({ author }, index) => (
-              <NavItem className="py-3 pl-3">
+              <NavItem className="py-3 pl-3 font-weight-bold">
                 <NavLink
                   className={classnames({
                     active: this.state.activeTab === index
