@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Favorite from './components/Favorite';
 import './App.css';
-import Example from './components/navbar';
-import Footer from './components/footer';
 import movies from './popular-movies';
 import Bouton from './bouton';
 
@@ -27,12 +25,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Example />
+          
         </header>
         <Favorite movies={movies.results} favorites={this.state.favorites} />
         <Bouton ajoutFav={this.ajoutFav} />
         <footer className="foot">
-          <Footer />
+         
         </footer>
       </div>
     );
