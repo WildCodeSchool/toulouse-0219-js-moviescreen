@@ -4,20 +4,25 @@
 
 
 
-
+.actorcardscontainer {
+  margin-bottom: 100px;
+  margin-top: 200px;
+}
 
 .moviecard {
   margin-bottom: 40px;
   margin-top: 40px;
+  border-color: transparent;
+
 }
 
 .upcomingslidercontainer {
-  margin-bottom: 70px;
-  margin-top: 70px;
+  margin-bottom: 200px;
+  margin-top: 200px;
 }
 .theaterslidercontainer {
-  margin-bottom: 70px;
-  margin-top: 70px;
+  margin-bottom: 200px;
+  margin-top: 200px;
 }
 
 

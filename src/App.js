@@ -5,6 +5,7 @@ import Trends from './components/portfolio';
 import CardCarousel from './components/cardforcarousel';
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
+import ActorCards from './components/ActorCards';
 
 import './App.css';
 
@@ -16,12 +17,14 @@ class App extends Component {
           <TheaterSlider />
         </div>
         <div>
+          <Trends />
+        </div>
+        <div>
           <UpcomingSlider />
         </div>
         <div>
-          <Trends />
+          <ActorCards />
         </div>
-
       </div>
     );
   }
