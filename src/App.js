@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
-import SimpleSlider from './components/carousel';
-import info from './popular-movies.json';
 import Trends from './components/portfolio';
-import CardCarousel from './components/cardforcarousel';
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
 import ActorCards from './components/ActorCards';
 
 import './App.css';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <TheaterSlider />
-        </div>
-        <div>
-          <Trends />
-        </div>
-        <div>
-          <UpcomingSlider />
-        </div>
-        <div>
-          <ActorCards />
-        </div>
+        <TheaterSlider />
+        <Trends />
+        <UpcomingSlider />
+        <h2>Popular Actors</h2>
+        <ActorCards />
+        <h2>Coming Soon</h2>
+        <iframe title="trailer" width="560" height="315" src="https://www.youtube.com/embed/xRc3WviXk2M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </div>
     );
   }
