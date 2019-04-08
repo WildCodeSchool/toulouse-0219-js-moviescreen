@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import movies from '../popular-movies.json';
 
@@ -5,7 +6,7 @@ class Bouton extends React.Component {
   render() {
     return (
       <div className="mb-4">
-        <button onClick={() => this.props.ajoutFav(299537)}> Add to Favorite</button>
+        <button type="button" onClick={() => this.props.ajoutFav(299537)}> Add to Favorite</button>
       </div>
     );
   }
