@@ -11,7 +11,7 @@ class App extends Component {
       favorites: [0]
     }
   }
-  ajoutFav = (id) => {
+ajoutFav = (id) => {
     const newFavorites = [...this.state.favorites]
     if (this.state.favorites.indexOf(id) >= 0) {
       newFavorites.splice(this.state.favorites.indexOf(id), 1)
