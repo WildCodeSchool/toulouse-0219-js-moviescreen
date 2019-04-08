@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Trends from './components/portfolio';
+import TheaterSlider from './components/TheaterSlider';
+import UpcomingSlider from './components/UpcomingSlider';
+import ActorCards from './components/ActorCards';
+
 import './App.css';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <TheaterSlider />
+        <Trends />
+        <UpcomingSlider />
+        <h2>Popular Actors</h2>
+        <ActorCards />
+        <h2>Coming Soon</h2>
+        <iframe title="trailer" width="560" height="315" src="https://www.youtube.com/embed/xRc3WviXk2M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </div>
     );
   }
