@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import "./DetailsMovieCard.css";
+import React, { Component } from 'react';
+import { ModalHeader, ModalBody } from 'reactstrap';
+import './DetailsMovieCard.css';
 
 class ActorDetails extends Component {
   render() {
@@ -19,12 +19,16 @@ class ActorDetails extends Component {
           <img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${profile_path}`}
             className="my-actor-profile-img mr-3"
+            alt=""
           />
           <p>
-            Birthday: <span className="font-weight-bold">{birthday}</span>
+            Birthday:
+            {' '}
+            <span className="font-weight-bold">{birthday}</span>
           </p>
           <p className="pb-2">
-            Place of birth:{" "}
+            Place of birth:
+            {' '}
             <span className="font-weight-bold">{place_of_birth}</span>
           </p>
           <div>{biography}</div>

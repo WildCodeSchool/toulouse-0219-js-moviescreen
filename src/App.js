@@ -32,7 +32,7 @@ class App extends Component {
       <div>
         <div className="row">
           <div className="container">
-            <DetailsMovieCard {...popular.results[0]} {...movies[0]} {...movieGenres[0]} />
+            <DetailsMovieCard {...popular.results[4]} {...movies[0]} {...movieGenres[0]} />
             <Reviews {...reviews.results[0]} />
             <Casting {...casting.cast[0]} />
           </div>

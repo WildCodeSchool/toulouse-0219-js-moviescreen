@@ -1,21 +1,16 @@
-import React from "react";
-import casting from "./casting.json";
+import React from 'react';
 import {
   Card,
-  Button,
   CardImg,
   CardTitle,
-  CardText,
   CardGroup,
   CardSubtitle,
   CardBody,
   Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
-import ActorDetails from "./ActorDetails";
-import actors from "./actors.json";
+} from 'reactstrap';
+import casting from './casting.json';
+import ActorDetails from './ActorDetails';
+import actors from './actors.json';
 
 
 class Casting extends React.Component {
