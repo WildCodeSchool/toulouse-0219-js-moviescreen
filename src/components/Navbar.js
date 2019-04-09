@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Collapse,
-  Navbar,
+  Navbar as BootstrapNavbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,8 +28,8 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
+      
+        <BootstrapNavbar color="light" light expand="md">
           <NavbarBrand href="/">Logo</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -77,8 +77,8 @@ export default class Example extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </Navbar>
-      </div>
+        </BootstrapNavbar>
+      
     );
   }
 }

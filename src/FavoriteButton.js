@@ -1,7 +1,7 @@
 import React from 'react';
 import movies from './popular-movies.json';
 
-class Bouton extends React.Component {
+class FavoriteButton extends React.Component {
   render() {
     return (
       <div className="mb-4">
@@ -12,4 +12,4 @@ class Bouton extends React.Component {
 }
 
 // remplacer 166428 par movie.id 
-export default Bouton; 
+export default FavoriteButton; 

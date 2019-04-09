@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Favorite from './components/Favorite';
 import './App.css';
-import Example from './components/navbar';
-import Footer from './components/footer';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import movies from './popular-movies';
-import Bouton from './bouton';
+import FavoriteButton from './FavoriteButton';
 
 class App extends Component {
   constructor(props) {
@@ -27,10 +27,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Example />
+          <Navbar />
         </header>
         <Favorite movies={movies.results} favorites={this.state.favorites} />
-        <Bouton ajoutFav={this.ajoutFav} />
+        <FavoriteButton ajoutFav={this.ajoutFav} />
         <footer className="foot">
           <Footer />
         </footer>
