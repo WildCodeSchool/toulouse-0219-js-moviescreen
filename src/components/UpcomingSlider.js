@@ -1,22 +1,41 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import axios from 'axios';
 import UpcomingCard from './UpcomingCard';
 import info from './../upcoming-movies.json';
 import './components.css';
 
 function slicing(arr) {
-  let size = 1;
-  let finalarr = [];
-  for (let i = 0; i < arr.results.length; i += size) {
-    finalarr.push(arr.results.slice(i, i + size));
+  const size = 1;
+  const finalarr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    finalarr.push(arr.slice(i, i + size));
   }
   return finalarr;
 }
 
 
 export default class UpcomingSlider extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: []
+    };
+    this.getMovies = this.getMovies.bind(this);
+  }
+
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  getMovies() {
+    axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
+      .then(response => response.data)
+      .then(data => this.setState({ movies: data.results }));
+  }
+
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 1500,
@@ -56,15 +75,13 @@ export default class UpcomingSlider extends Component {
         }
       ]
     };
-    const slide = slicing(info);
+    const slide = slicing(this.state.movies);
     return (
       <div className="container upcomingslidercontainer">
         <h2>Upcoming Movies</h2>
         <Slider {...settings}>
-          {slide.map((movie) => (
-            <div>
-              <UpcomingCard movie={movie} />
-            </div>
+          {slide.map((movie, index) => (
+            <UpcomingCard key={index} movie={movie} />
           ))}
         </Slider>
       </div>

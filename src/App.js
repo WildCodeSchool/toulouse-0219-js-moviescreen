@@ -16,7 +16,7 @@ import movies from './popular-movies';
 import FavoriteButton from './FavoriteButton';
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
-import ActorCards from './components/ActorCards';
+import ActorDeck from './components/ActorDeck';
 import './components/details/DetailsMovieCard.css';
 
 
@@ -60,14 +60,15 @@ class App extends Component {
  
       <div className="App">
         <header className="App-header">
+
           <Navbar />
         </header>
 
         <TheaterSlider />
-        <Trends />
+         <Trends /> 
         <UpcomingSlider />
         <h2>Popular Actors</h2>
-        <ActorCards />
+        <ActorDeck />
         <h2>Coming Soon</h2>
         <iframe title="trailer" width="560" height="315" src="https://www.youtube.com/embed/xRc3WviXk2M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       

@@ -1,5 +1,32 @@
+:root {
+  --primary-color: #FF6F61;
+  --secondary-color: #616247;
+  --dark-color: #616247;
+  --light-color: #F0EDE5;
+  --info-color: #B7855F;
+  --trans: all 600ms;
+}
+
+.btn-info {
+background-color: #B7855F;
+color:#B7855F;
+border-color: #B7855F;
+}
+ 
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+ 
+background-color: #B7855F;
+color:#B7855F;
+border-color: #B7855F;
+}
+
 .App {
   text-align: center;
+  background-color: #000C0B;
+}
+
+h2{
+  color: #B7855F;
 }
 .fond-foot {
   background-color: black;

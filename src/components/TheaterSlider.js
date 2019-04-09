@@ -29,7 +29,7 @@ export default class TheaterSlider extends Component {
   }
 
   getMovies() {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
+    axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
       .then(response => response.data)
       .then(data => this.setState({ movies: data.results }));
   }
@@ -81,7 +81,7 @@ export default class TheaterSlider extends Component {
         <h2>In Theaters</h2>
         <Slider {...settings}>
           {slide.map((movie, index) => (
-              <TheaterCard key={index} movie={movie} />
+            <TheaterCard key={index} movie={movie} />
           ))}
         </Slider>
       </div>
