@@ -6,14 +6,14 @@ import './components.css';
 import axios from 'axios';
 
 
-// function slicing(arr) {
-//   const size = 1;
-//   const finalarr = [];
-//   for (let i = 0; i < arr.results.length; i += size) {
-//     finalarr.push(arr.results.slice(i, i + size));
-//   }
-//   return finalarr;
-// }
+function slicing(arr) {
+  const size = 1;
+  const finalarr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    finalarr.push(arr.slice(i, i + size));
+  }
+  return finalarr;
+}
 
 export default class TheaterSlider extends Component {
   constructor(props) {
@@ -29,9 +29,9 @@ export default class TheaterSlider extends Component {
   }
 
   getMovies() {
-    axios('https://api.themoviedb.org/3/movie/popular?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
-      .then(response => response.json())
-      .then(movies => this.setState({ movies }));
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
+      .then(response => response.data)
+      .then(data => this.setState({ movies: data.results }));
   }
 
   render() {
@@ -75,15 +75,13 @@ export default class TheaterSlider extends Component {
         }
       ]
     };
-    // const slide = slicing(this.getMovies);
+    const slide = slicing(this.state.movies);
     return (
       <div className="container theaterslidercontainer">
         <h2>In Theaters</h2>
         <Slider {...settings}>
-          {this.state.movies.map(movie => (
-            <div>
-              <TheaterCard movie={movie} />
-            </div>
+          {slide.map((movie, index) => (
+              <TheaterCard key={index} movie={movie} />
           ))}
         </Slider>
       </div>
