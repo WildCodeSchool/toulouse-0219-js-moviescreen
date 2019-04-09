@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Collapse,
-  Navbar,
+  Navbar as BootstrapNavbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,14 +23,14 @@ export default class Example extends React.Component {
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen 
     });
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+      
+        <BootstrapNavbar color="light" light expand="md">
+          <NavbarBrand href="/">Logo</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-center" navbar>
@@ -72,11 +72,13 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="">Je ne sais pas quoi regarder</NavLink>
               </NavItem>
-              
+              <NavItem>
+                <NavLink href=""> <i class="fab fa-facebook fa-2x"></i> <i class="fab fa-instagram fa-2x"></i> <i class="fab fa-twitter fa-2x"></i></NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
-        </Navbar>
-      </div>
+        </BootstrapNavbar>
+      
     );
   }
 }
