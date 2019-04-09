@@ -29,7 +29,7 @@ export default class Footer extends React.Component {
 
   render() {
     return (
-      <Table dark>
+      <Table dark className="fond-foot">
 
         <tbody>
 
