@@ -21,23 +21,21 @@ const moviesTemp = [
   },
 ];
 
-
-class MovieDetails extends Component {  
+class MovieDetails extends Component {
   render() {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
-    return (     
-        <div className="row">
-          <div className="container">
-            <DetailsMovieCard {...popular.results[4]} {...moviesTemp[0]} {...movieGenres[0]} />
-            <Reviews {...reviews.results[0]} />
-            <Casting {...casting.cast[0]} />
-          </div>
+    return (
+      <div className="row">
+        <div className="container">
+          <DetailsMovieCard {...popular.results[0]} {...moviesTemp[0]} {...movieGenres[0]} />
+          <Reviews {...reviews.results[0]} />
+          <Casting {...casting.cast[0]} />
         </div>
+      </div>
     );
   }
 }
-
 
 export default MovieDetails;
