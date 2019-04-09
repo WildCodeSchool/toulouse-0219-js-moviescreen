@@ -1,5 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import info from './popular-movies.json';
+import Trends from './components/Portfolio';
 import popular from './popular-movies.json';
 import genres from './genres.json';
 import reviews from './components/details/reviews.json';
@@ -12,7 +14,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import movies from './popular-movies';
 import FavoriteButton from './FavoriteButton';
-import Trends from './components/portfolio';
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
 import ActorCards from './components/ActorCards';
