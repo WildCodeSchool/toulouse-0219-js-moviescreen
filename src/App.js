@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
