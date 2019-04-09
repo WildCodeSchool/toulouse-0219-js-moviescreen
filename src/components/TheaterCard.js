@@ -12,7 +12,6 @@ const TheaterCard = (props) => {
           <Card className="moviecard">
             <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${poster_path}`} alt="Card " />
             <CardBody>
-              {/* <CardTitle>{title}</CardTitle> */}
               <Button outline color="info" className="buttoncard">See More</Button>
             </CardBody>
           </Card>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import SimpleSlider from './components/carousel';
 import info from './popular-movies.json';
-import Trends from './components/portfolio';
-import CardCarousel from './components/cardforcarousel';
+import Trends from './components/Portfolio';
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
 import ActorCards from './components/ActorCards';
@@ -13,18 +11,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <TheaterSlider />
-        </div>
-        <div>
-          <Trends />
-        </div>
-        <div>
-          <UpcomingSlider />
-        </div>
-        <div>
-          <ActorCards />
-        </div>
+        <TheaterSlider />
+        <Trends />
+        <UpcomingSlider />
+        <ActorCards />
       </div>
     );
   }

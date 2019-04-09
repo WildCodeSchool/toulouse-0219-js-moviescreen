@@ -1,22 +1,41 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
 import TheaterCard from './TheaterCard';
-import info from './../popular-movies.json';
+import info from '../popular-movies.json';
 import './components.css';
+import axios from 'axios';
 
-function slicing(arr) {
-  let size = 1;
-  let finalarr = [];
-  for (let i = 0; i < arr.results.length; i += size) {
-    finalarr.push(arr.results.slice(i, i + size));
-  }
-  return finalarr;
-}
 
+// function slicing(arr) {
+//   const size = 1;
+//   const finalarr = [];
+//   for (let i = 0; i < arr.results.length; i += size) {
+//     finalarr.push(arr.results.slice(i, i + size));
+//   }
+//   return finalarr;
+// }
 
 export default class TheaterSlider extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: []
+    };
+    this.getMovies = this.getMovies.bind(this);
+  }
+
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  getMovies() {
+    axios('https://api.themoviedb.org/3/movie/popular?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
+      .then(response => response.json())
+      .then(movies => this.setState({ movies }));
+  }
+
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 1500,
@@ -56,12 +75,12 @@ export default class TheaterSlider extends Component {
         }
       ]
     };
-    const slide = slicing(info);
+    // const slide = slicing(this.getMovies);
     return (
       <div className="container theaterslidercontainer">
         <h2>In Theaters</h2>
         <Slider {...settings}>
-          {slide.map((movie) => (
+          {this.state.movies.map(movie => (
             <div>
               <TheaterCard movie={movie} />
             </div>
