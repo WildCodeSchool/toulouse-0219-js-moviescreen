@@ -56,17 +56,20 @@ class DetailsMovieCard extends Component {
                 <h2 className="card-title pb-4">{original_title}</h2>
                 <h5 className="pb-4">
                   Genre:
+                  {' '}
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>
                 </h5>
                 <p>
-                  Directed by: 
-                  <span className="font-weight-bold"> {director}</span>
+                  Directed by:
+                  {' '}
+                  <span className="font-weight-bold">{director}</span>
                 </p>
                 <p>
-                  Status: 
-                  <span className="font-weight-bold"> {status}</span>
+                  Status:
+                  {' '}
+                  <span className="font-weight-bold">{status}</span>
                 </p>
                 <p className="card-text">
                   <small className="text-muted">
