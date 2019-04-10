@@ -6,15 +6,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import movies from './popular-movies';
 import FavoriteButton from './FavoriteButton';
-<<<<<<< HEAD
 import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
 import ActorDeck from './components/ActorDeck';
 import './components/details/DetailsMovieCard.css';
-=======
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
->>>>>>> 0a264f650b500d165490c60ba35c5584b2fd3f70
 import './App.css';
 
 
