@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import axios from 'axios';
 import UpcomingCard from './UpcomingCard';
-import info from './../upcoming-movies.json';
 import './components.css';
 
 function slicing(arr) {
@@ -13,7 +12,6 @@ function slicing(arr) {
   }
   return finalarr;
 }
-
 
 export default class UpcomingSlider extends Component {
   constructor(props) {
@@ -42,7 +40,7 @@ export default class UpcomingSlider extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 6000,
       arrows: true,
       pauseOnHover: false,
       vertical: false,
@@ -69,8 +67,8 @@ export default class UpcomingSlider extends Component {
         {
           breakpoint: 520,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 2
           }
         }
       ]
@@ -78,7 +76,6 @@ export default class UpcomingSlider extends Component {
     const slide = slicing(this.state.movies);
     return (
       <div className="container upcomingslidercontainer">
-        <h2>Upcoming Movies</h2>
         <Slider {...settings}>
           {slide.map((movie, index) => (
             <UpcomingCard key={index} movie={movie} />

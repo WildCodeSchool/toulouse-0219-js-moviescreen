@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import TheaterCard from './TheaterCard';
-import info from '../popular-movies.json';
 import './components.css';
 import axios from 'axios';
 
@@ -42,7 +41,7 @@ export default class TheaterSlider extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 6000,
       arrows: true,
       pauseOnHover: false,
       vertical: false,
@@ -69,8 +68,8 @@ export default class TheaterSlider extends Component {
         {
           breakpoint: 520,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 2
           }
         }
       ]
@@ -78,7 +77,6 @@ export default class TheaterSlider extends Component {
     const slide = slicing(this.state.movies);
     return (
       <div className="container theaterslidercontainer">
-        <h2>In Theaters</h2>
         <Slider {...settings}>
           {slide.map((movie, index) => (
             <TheaterCard key={index} movie={movie} />

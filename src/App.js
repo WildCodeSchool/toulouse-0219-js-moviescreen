@@ -57,21 +57,19 @@ class App extends Component {
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
     return (
- 
+
       <div className="App">
         <header className="App-header">
-
           <Navbar />
         </header>
-
+        <h2>In Theaters</h2>
         <TheaterSlider />
-         <Trends /> 
+        <h2>Trends</h2>
+        <Trends />
+        <h2>Upcoming Movies</h2>
         <UpcomingSlider />
         <h2>Popular Actors</h2>
         <ActorDeck />
-        <h2>Coming Soon</h2>
-        <iframe title="trailer" width="560" height="315" src="https://www.youtube.com/embed/xRc3WviXk2M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-      
         <Favorite movies={movies.results} favorites={this.state.favorites} />
         <FavoriteButton ajoutFav={this.ajoutFav} />
 
@@ -86,7 +84,7 @@ class App extends Component {
           <Footer />
         </footer>
       </div>
- 
+
     );
   }
 }

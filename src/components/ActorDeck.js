@@ -39,7 +39,7 @@ export default class ActorDeck extends Component {
       <div className="container actordeckcontainer">
         <Row className="p-2">
           {slide.map((actor, index) => (
-            <Col lg="3" md="6" sm="12">
+            <Col lg="3" md="4" sm="6" xs="6">
               <ActorCards key={index} actor={actor} />
             </Col>
           ))}
