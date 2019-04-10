@@ -18,8 +18,6 @@ import TheaterSlider from './components/TheaterSlider';
 import UpcomingSlider from './components/UpcomingSlider';
 import ActorDeck from './components/ActorDeck';
 import './components/details/DetailsMovieCard.css';
-
-
 import './App.css';
 
 const moviesTemp = [
