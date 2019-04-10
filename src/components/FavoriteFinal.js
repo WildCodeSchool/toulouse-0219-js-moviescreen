@@ -9,7 +9,8 @@ class FavoriteFinal extends React.Component {
       <div>
         <h1>Mes favoris</h1>
         <Favorite movies={movies} favorites={this.state.favorites} />
-        <FavoriteButton ajoutFav={this.ajoutFav} />
+        {/* <FavoriteButton ajoutFav={this.ajoutFav} />  */}
+        
       </div>
     )
   }

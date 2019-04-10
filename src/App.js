@@ -12,6 +12,7 @@ import './App.css';
 import FavoriteFinal from './components/FavoriteFinal';
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +40,7 @@ class App extends Component {
 
         <Route path="/" exact component={Homepage} />
         <Route path="/details/:id" exact component={MovieDetails} />
-        <Route path="/favorite-and-other" component={FavoriteFinal} />
+        <Route path="/favorite-and-other" component={Favorite} />
       
         
 
