@@ -9,13 +9,14 @@ import FavoriteButton from './FavoriteButton';
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';
+import FavoriteFinal from './components/FavoriteFinal';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favorites: [0]
+      favorites: []
     }
   }
   ajoutFav = (id) => {
@@ -38,9 +39,9 @@ class App extends Component {
 
         <Route path="/" exact component={Homepage} />
         <Route path="/details/:id" exact component={MovieDetails} />
+        <Route path="/favorite-and-other" component={FavoriteFinal} />
       
-        <Favorite movies={movies.results} favorites={this.state.favorites} />
-        <FavoriteButton ajoutFav={this.ajoutFav} />
+        
 
         <footer className="foot">
           <Footer />

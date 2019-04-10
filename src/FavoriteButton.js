@@ -11,5 +11,5 @@ class FavoriteButton extends React.Component {
   }
 }
 
-// remplacer 166428 par movie.id 
+// remplacer 166428 par this.state.movies.id
 export default FavoriteButton; 

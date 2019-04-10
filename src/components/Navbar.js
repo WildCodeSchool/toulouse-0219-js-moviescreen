@@ -13,7 +13,7 @@ import {
   DropdownItem } from 'reactstrap';
 
 export default class Navbar extends React.Component {
-  constructor(props) {
+  constructor(props) { 
     super(props);
 
     this.toggle = this.toggle.bind(this);
