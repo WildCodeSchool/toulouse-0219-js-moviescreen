@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import TheaterCard from './TheaterCard';
-import info from '../popular-movies.json';
-import './components.css';
 import axios from 'axios';
+import TheaterCard from './TheaterCard';
+import './components.css';
 
 
 function slicing(arr) {
@@ -29,7 +28,7 @@ export default class TheaterSlider extends Component {
   }
 
   getMovies() {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
+    axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1')
       .then(response => response.data)
       .then(data => this.setState({ movies: data.results }));
   }
@@ -42,7 +41,7 @@ export default class TheaterSlider extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 6000,
       arrows: true,
       pauseOnHover: false,
       vertical: false,
@@ -69,8 +68,8 @@ export default class TheaterSlider extends Component {
         {
           breakpoint: 520,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 2
           }
         }
       ]
@@ -78,10 +77,9 @@ export default class TheaterSlider extends Component {
     const slide = slicing(this.state.movies);
     return (
       <div className="container theaterslidercontainer">
-        <h2>In Theaters</h2>
         <Slider {...settings}>
           {slide.map((movie, index) => (
-              <TheaterCard key={index} movie={movie} />
+            <TheaterCard key={index} movie={movie} />
           ))}
         </Slider>
       </div>

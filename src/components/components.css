@@ -1,29 +1,52 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
-
-
-
-.actorcardscontainer {
-  margin-bottom: 100px;
-  margin-top: 50px;
+:root {
+  --primary-color: #FF6F61;
+  --secondary-color: #616247;
+  --dark-color: #616247;
+  --light-color: #F0EDE5;
+  --info-color: #B7855F;
+  --trans: all 600ms;
 }
 
-.moviecard {
+.btn-info {
+  background-color: #B7855F;
+  color:#B7855F;
+  border-color: #B7855F;
+  }
+   
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+  
+background-color: #B7855F;
+color:#B7855F;
+border-color: #B7855F;
+  
+}
+.posterfolio {
+  border-radius: 15px;
+}
+  
+/* .cardimage {
+  border-radius: 5px;
+}
+
+.moviecard, .actorcard {
   margin-bottom: 40px;
   margin-top: 40px;
   border-color: transparent;
+  background-color: transparent;
+  }
 
+.actorname {
+  color: #B7855F;
 }
 
-.upcomingslidercontainer {
+.upcomingslidercontainer,.theaterslidercontainer, .trendsportfolio, .actordeckcontainer {
   margin-bottom: 200px;
-  margin-top: 200px;
+  margin-top: 50px;
 }
-.theaterslidercontainer {
-  margin-bottom: 200px;
-  margin-top: 200px;
-}
+ */
 
 
 
