@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import axios from 'axios';
 import TheaterCard from './TheaterCard';
 import './components.css';
-import axios from 'axios';
 
 
 function slicing(arr) {
