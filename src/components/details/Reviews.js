@@ -8,9 +8,7 @@ import {
   Row,
   Col
 } from 'reactstrap';
-
 import classnames from 'classnames';
-import reviews from './reviews.json';
 
 
 class Reviews extends React.Component {
@@ -32,14 +30,6 @@ class Reviews extends React.Component {
   }
 
   render() {
-    function partage() {
-      const myArr = [];
-      for (let i = 0; i < 3; i += 1) {
-        myArr.push(reviews.results[i]);
-      }
-      return myArr;
-    }
-    const review = partage(reviews);
     return (
       <div>
         <div className="container">
@@ -51,7 +41,7 @@ class Reviews extends React.Component {
         </div>
         <div className="card m-4">
           <Nav tabs>
-            {review.map(({ author }, index) => (
+            {reviews.map(({ author }, index) => (
               <NavItem className="py-3 pl-3 font-weight-bold">
                 <NavLink
                   className={classnames({
@@ -67,7 +57,7 @@ class Reviews extends React.Component {
             ))}
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
-            {review.map(({ content }, index) => (
+            {reviews.map(({ content }, index) => (
               <TabPane tabId={index} className="p-4">
                 <Row>
                   <Col sm="12" className="">

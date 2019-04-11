@@ -37,7 +37,9 @@ class App extends Component {
         </header>
 
         <Route path="/" exact component={Homepage} />
-        <Route path="/details/:id" exact component={MovieDetails} />
+        <Route path="/MovieDetails/:id" exact component={MovieDetails} />
+        
+        
       
         <Favorite movies={movies.results} favorites={this.state.favorites} />
         <FavoriteButton ajoutFav={this.ajoutFav} />

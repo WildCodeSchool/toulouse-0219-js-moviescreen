@@ -24,6 +24,8 @@ class DetailsMovieCard extends Component {
       key,
     } = this.props;
 
+
+
     return (
       <div>
         <div className="container">
@@ -42,7 +44,7 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
-              <a href={`https://www.youtube.com/watch?v=${trailers.results[0].key}`} target="_blank">
+              <a href={`https://www.youtube.com/watch?v=${video}`} target="_blank">
                 <img
                   src="https://cdn1.iconfinder.com/data/icons/social-media-glossy/512/7-player_windows_media_player_video_social-512.png"
                   className="my-video-player"
