@@ -23,10 +23,32 @@ border-color: #B7855F;
 .App {
   text-align: center;
   background-color: #000C0B;
+  color: #B7855F;
 }
 
+.nav-pills {
+  display: flex;
+  list-style-type: none;
+  margin:  auto;
+  font-size: 30px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  
+}
+.homebutton {
+  font-size: 40px;
+}
+.navbarbg {
+  background-color: transparent;
+}
+
+.white {
+  color: white;
+}
+.blush {
+  color: #B7855F;
+}
 h2{
-  margin-top: 50px;
+  margin-top: 70px;
   color: #B7855F;
   font-size: 55px;
   font-family: 'Fascinate Inline', cursive;
@@ -35,11 +57,38 @@ h2{
   background-color: black;
   color:white;
 }
-
+.medialogo {
+  float: right;
+}
 .cardimage, .posterfolio, .trendscol {
   border-radius: 15px;
 }
-
+.castingcard, .castinggroup, .detailcard{
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #B7855F;
+}
+.reviewcard {
+  background-color: transparent;
+  color: white;
+  border-color: #B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 21px;
+} 
+.castingcard {
+  margin-right: 5px;
+  margin-left: 5px;
+  
+}
+.castingbody {
+  color: #B7855F;
+ 
+}
+.castingcharacter {
+  color: white;
+}
 .moviecard, .actorcard {
   margin-bottom: 40px;
   margin-top: 40px;
@@ -47,7 +96,7 @@ h2{
   background-color: transparent;
   }
 
-.actorname {
+.actorname, .my-card-body {
   color: #B7855F;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 25px;
@@ -59,3 +108,8 @@ h2{
   border-radius: 15px;
 }
 
+.detailcontainer {
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg } from 'reactstrap';
-import { Route, BrowserRouter, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PortfolioCard = (props) => {
   return (

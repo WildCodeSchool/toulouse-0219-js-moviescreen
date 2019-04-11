@@ -18,7 +18,6 @@ class Homepage extends Component {
         <UpcomingSlider />
         <h2>Popular Actors</h2>
         <ActorDeck />
-        <iframe title="trailer" width="560" height="315" src="https://www.youtube.com/embed/xRc3WviXk2M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </div>
     );
   }

@@ -28,14 +28,14 @@ class DetailsMovieCard extends Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container detailcontainer">
           <div className="row">
             <div className="col ml-4 mt-4">
-              <h2>{original_title}</h2>
+            <h2>{original_title}</h2>
             </div>
           </div>
         </div>
-        <div className="card m-4">
+        <div className="detailcard card m-4">
           <div className="row no-gutters m-3">
             <div className="col-md-4 col-lg-6">
               <img
@@ -55,32 +55,31 @@ class DetailsMovieCard extends Component {
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
-                <h2 className="card-title pb-4">{original_title}</h2>
-                <h5 className="pb-4">
+                <h5 className="pb-4 blush">
                   Genre:
                   {' '}
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>
                   <span className="my-genre">{name}</span>
                 </h5>
-                <p>
+                <p className="blush">
                   Directed by:
                   {' '}
-                  <span className="font-weight-bold">{director}</span>
+                  <span className="font-weight-bold white">{director}</span>
                 </p>
-                <p>
+                <p className="blush">
                   Status:
                   {' '}
-                  <span className="font-weight-bold">{status}</span>
+                  <span className="font-weight-bold white">{status}</span>
                 </p>
                 <p className="card-text">
-                  <small className="text-muted">
-                    Release date:
-                    {release_date}
+                  <small className="blush">
+                    Release date: 
+                     {release_date}
                   </small>
                 </p>
-                <p className="card-text pb-2 my-overview">{overview}</p>
-                <h4 className="my-3 mt-auto">
+                <p className="card-text pb-2 my-overview white">{overview}</p>
+                <h4 className="my-3 mt-auto blush">
                 Vote:
                   {vote_average}
                 </h4>

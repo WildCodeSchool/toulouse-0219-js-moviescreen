@@ -6,7 +6,7 @@ import reviews from './details/reviews.json';
 import casting from './details/casting.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
-import Casting from './details/Casting';
+import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
 import axios from 'axios';
 
@@ -22,13 +22,15 @@ const moviesTemp = [
   },
 ];
 
-function partage() {
-  const myArr = [];
-  for (let i = 0; i < 3; i += 1) {
-    myArr.push(reviews[i]);
-  }
-  return myArr;
-}
+// function cutting(arr) {
+//   const size = 1;
+//   const finalarr = [];
+//   for (let i = 0; i < 5; i += size) {
+//     finalarr.push(arr.slice(i, i + size));
+//   }
+//   return finalarr;
+// }
+
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -65,7 +67,7 @@ class MovieDetails extends Component {
     axios.get(reviewurl)
       .then(response => response.data)
       .then(data => this.setState({
-        reviews: data.results
+        reviews: data.results.slice(0, 4)
       }));
   }
 
@@ -75,7 +77,7 @@ class MovieDetails extends Component {
     axios.get(casturl)
       .then(response => response.data)
       .then(data => this.setState({
-        cast: data
+        casting: data.cast.slice(0, 5)
       }));
   }
 
@@ -83,14 +85,15 @@ class MovieDetails extends Component {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
-    const review = partage(reviews);
+    // const review = cutting(reviews);
+    // const cast = cutting(casting)
     return (
       <div className="row">
         <div className="container">
 
           <DetailsMovieCard {...this.state.movie} />
-          <Reviews {...this.state.reviews} />
-          <Casting {...casting.cast[0]} />
+           <Reviews reviews={this.state.reviews}  />
+           <CastingCard casting={this.state.casting} />
         </div>
       </div>
     );

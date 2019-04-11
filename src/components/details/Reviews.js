@@ -32,16 +32,16 @@ class Reviews extends React.Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <div className="row">
-            <div className="col ml-4">
+        <div className="container reviewcard">
+          <div className="row reviewcard ">
+            <div className="col ml-4 reviewcard blush">
               <h2>Reviews</h2>
             </div>
           </div>
         </div>
-        <div className="card m-4">
+        <div className="card reviewcard m-4">
           <Nav tabs>
-            {reviews.map(({ author }, index) => (
+            {this.props.reviews.map(({ author }, index) => (
               <NavItem className="py-3 pl-3 font-weight-bold">
                 <NavLink
                   className={classnames({
@@ -57,11 +57,11 @@ class Reviews extends React.Component {
             ))}
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
-            {reviews.map(({ content }, index) => (
+            {this.props.reviews.map(({content }, index) => (
               <TabPane tabId={index} className="p-4">
                 <Row>
                   <Col sm="12" className="">
-                    <p>{content}</p>
+                    <p className="white">{content}</p>
                   </Col>
                 </Row>
               </TabPane>
