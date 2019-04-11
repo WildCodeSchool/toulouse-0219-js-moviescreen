@@ -43,34 +43,47 @@ export default class Navbar extends React.Component {
                     Action
                   </DropdownItem>
                   <DropdownItem>
-                    Comédie
+                    Comedy
                   </DropdownItem>
                   <DropdownItem>
-                    Science-fiction
+                    Sci-fi
                   </DropdownItem>
                   <DropdownItem>
                     
                   </DropdownItem>
                   <DropdownItem>
-                    Action
+                    Fantastique
                   </DropdownItem>
                   <DropdownItem>
-                    Comédie
+                    Thriller
+                  </DropdownItem>
+                  <DropdownItem>
+                    Horror
+                  </DropdownItem>
+                  <DropdownItem>
+                    Animation
+                  </DropdownItem>
+                  <DropdownItem>
+                    
+                  </DropdownItem>
+                  <DropdownItem>
+                    Documentary
+                  </DropdownItem>
+                  <DropdownItem>
+                    Romantic
                   </DropdownItem>
                   
                 </DropdownMenu>
               </UncontrolledDropdown>
+              
               <NavItem>
-                <NavLink href="">Conseil de la semaine</NavLink>
+                <NavLink href="">Watch Later</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">A regarder</NavLink>
+                <NavLink href="">Favorites</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">Mes Favoris</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">Je ne sais pas quoi regarder</NavLink>
+                <NavLink href="">I feel lucky</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href=""> <i class="fab fa-facebook fa-2x"></i> <i class="fab fa-instagram fa-2x"></i> <i class="fab fa-twitter fa-2x"></i></NavLink>
