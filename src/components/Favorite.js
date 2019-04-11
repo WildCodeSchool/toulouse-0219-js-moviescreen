@@ -22,7 +22,7 @@ class Favorite extends React.Component {
 
     
     getMovies() {
-    const arr = [329996, 424783]
+    const arr = [329996, 424783, 166428, 449985, 504172]
     const requests = arr.map(favorite => {
     return axios.get(`https://api.themoviedb.org/3/movie/${favorite}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`)
       .then(response => response.data)
