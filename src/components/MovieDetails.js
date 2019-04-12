@@ -92,8 +92,8 @@ class MovieDetails extends Component {
         <div className="container">
 
           <DetailsMovieCard {...this.state.movie} />
-           <Reviews reviews={this.state.reviews}  />
-           <CastingCard casting={this.state.casting} />
+          <Reviews reviews={this.state.reviews} />
+          <CastingCard casting={this.state.casting} />
         </div>
       </div>
     );

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { Card, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const PortfolioCard = (props) => {
-  return (
-    <div>
-      {
+const PortfolioCard = (props) => (
+  <div>
+    {
         props.movie.map(({ title, poster_path, id }) => (
           <Link to={`/MovieDetails/${id}`}>
             <Card key={id} className="moviecard">
@@ -14,7 +13,6 @@ const PortfolioCard = (props) => {
           </Link>
         ))}
 
-    </div>
-  );
-};
+  </div>
+);
 export default PortfolioCard;

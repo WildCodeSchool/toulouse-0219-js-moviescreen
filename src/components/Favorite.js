@@ -1,5 +1,5 @@
 import React from 'react';
-import movies from './../popular-movies';
+import movies from '../popular-movies';
 
 const Favorite = (props) => (
   <ul>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Card, Button, CardImg, CardBody } from 'reactstrap';
-import { Route, BrowserRouter, Switch, Link } from 'react-router-dom';
+import {
+  Card, Button, CardImg, CardBody
+} from 'reactstrap';
+import {
+  Route, BrowserRouter, Switch, Link
+} from 'react-router-dom';
 
-const TheaterCard = (props) => {
-
-  return (
-    <div className="container">
-      {
+const TheaterCard = (props) => (
+  <div className="container">
+    {
         props.movie.map(({ title, poster_path, id }) => (
           <Link to={`/MovieDetails/${id}`}>
             <Card key={id} className="moviecard">
@@ -15,9 +17,8 @@ const TheaterCard = (props) => {
           </Link>
         ))
       }
-    </div>
+  </div>
 
-  );
-};
+);
 
 export default TheaterCard;

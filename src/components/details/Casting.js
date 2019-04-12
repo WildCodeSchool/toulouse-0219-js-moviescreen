@@ -41,7 +41,8 @@ class Casting extends React.Component {
             {this.props.casting.map(({ profile_path, name, character }) => (
               <Card className="castingcard">
                 {this.props.buttonLabel}
-                <CardImg className="castingimage"
+                <CardImg
+                  className="castingimage"
                   // DEVE ESSERE QUALCOSA COSI'
                   // onClick={() => this.toggle(actor.id)}
                   onClick={this.toggle}
@@ -62,7 +63,7 @@ class Casting extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-             {/* <ActorDetails {...actors} />  */}
+            {/* <ActorDetails {...actors} />  */}
           </Modal>
         </div>
       </div>

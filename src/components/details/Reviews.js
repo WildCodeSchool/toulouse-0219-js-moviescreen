@@ -57,7 +57,7 @@ class Reviews extends React.Component {
             ))}
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
-            {this.props.reviews.map(({content }, index) => (
+            {this.props.reviews.map(({ content }, index) => (
               <TabPane tabId={index} className="p-4">
                 <Row>
                   <Col sm="12" className="">

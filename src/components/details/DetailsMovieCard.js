@@ -25,13 +25,12 @@ class DetailsMovieCard extends Component {
     } = this.props;
 
 
-
     return (
       <div>
         <div className="container detailcontainer">
           <div className="row">
             <div className="col ml-4 mt-4">
-            <h2>{original_title}</h2>
+              <h2>{original_title}</h2>
             </div>
           </div>
         </div>
@@ -75,7 +74,7 @@ class DetailsMovieCard extends Component {
                 <p className="card-text">
                   <small className="blush">
                     Release date: 
-                     {release_date}
+                    {release_date}
                   </small>
                 </p>
                 <p className="card-text pb-2 my-overview white">{overview}</p>

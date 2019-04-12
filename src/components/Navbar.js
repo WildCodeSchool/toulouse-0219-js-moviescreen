@@ -86,15 +86,15 @@ export default class Navbar extends React.Component {
           </Nav>
         </Collapse>
         <NavItem className="medialogo nav-pills justify-content-end">
-              <NavLink href="">
-              
-                <i className="fab fa-facebook fa-1x blush mr-3" />
-            
-                <i className="fab fa-instagram fa-1x blush mr-3" />
-                
-                <i className="fab fa-twitter fa-1x blush mr-3" />
-              </NavLink>
-            </NavItem>
+          <NavLink href="">
+
+            <i className="fab fa-facebook fa-1x blush mr-3" />
+
+            <i className="fab fa-instagram fa-1x blush mr-3" />
+
+            <i className="fab fa-twitter fa-1x blush mr-3" />
+          </NavLink>
+        </NavItem>
       </BootstrapNavbar>
 
     );
