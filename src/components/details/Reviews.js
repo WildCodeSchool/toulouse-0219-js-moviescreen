@@ -61,11 +61,7 @@ class Reviews extends React.Component {
               <TabPane tabId={index} className="p-4">
                 <Row>
                   <Col sm="12" className="">
-<<<<<<< HEAD
-                    <p className="my-overview">{content}</p>
-=======
                     <p className="white my-review">{content}</p>
->>>>>>> 51977c7c3f24df44c8af347f52f701a336ad6221
                   </Col>
                 </Row>
               </TabPane>
