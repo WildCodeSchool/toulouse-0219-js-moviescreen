@@ -71,7 +71,7 @@ class Reviews extends React.Component {
               <TabPane tabId={index} className="p-4">
                 <Row>
                   <Col sm="12" className="">
-                    <p>{content}</p>
+                    <p className="my-overview">{content}</p>
                   </Col>
                 </Row>
               </TabPane>
