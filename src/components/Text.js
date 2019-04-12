@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, Button, CardImg, CardTitle, CardBody } from 'reactstrap';
-import './components.1.css';
 
 // function getimageurl(str) {
 //   if (str.startWith('https')) {
