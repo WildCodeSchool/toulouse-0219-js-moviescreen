@@ -45,13 +45,13 @@ export default class Footer extends React.Component {
               <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} unmountOnClose={this.state.unmountOnClose}>
                 <ModalHeader toggle={this.toggle}>text title</ModalHeader>
                 <ModalBody>
-                <Input type="textarea" placeholder="Write something (data should remain in modal if unmountOnClose is set to false)" rows={5} />
-              </ModalBody>
+                  <Input type="textarea" placeholder="Write something (data should remain in modal if unmountOnClose is set to false)" rows={5} />
+                </ModalBody>
                 <ModalFooter>
-                <Button color="primary" onClick={this.toggle}>Do Something</Button>
-                {' '}
-                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-              </ModalFooter>
+                  <Button color="primary" onClick={this.toggle}>Do Something</Button>
+                  {' '}
+                  <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                </ModalFooter>
               </Modal>
             </td>
             <td> Crédits</td>
@@ -62,7 +62,3 @@ export default class Footer extends React.Component {
     );
   }
 }
-
-  
-
-

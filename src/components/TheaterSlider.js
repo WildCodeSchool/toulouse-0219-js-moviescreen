@@ -74,11 +74,13 @@ export default class TheaterSlider extends Component {
         }
       ]
     };
-    const slide = slicing(this.state.movies);
+    const { movies } = this.state;
+    const slide = slicing(movies);
     return (
       <div className="container theaterslidercontainer">
         <Slider {...settings}>
           {slide.map((movie, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <TheaterCard key={index} movie={movie} />
           ))}
         </Slider>

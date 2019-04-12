@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import ActorCards from './ActorCards';
 import axios from 'axios';
+import ActorCards from './ActorCards';
 import './components.css';
 
 
@@ -34,7 +34,7 @@ export default class ActorDeck extends Component {
   }
 
   render() {
-    const slide = slicing(this.state.actors)
+    const slide = slicing(this.state.actors);
     return (
       <div className="container actordeckcontainer">
         <Row className="p-2">

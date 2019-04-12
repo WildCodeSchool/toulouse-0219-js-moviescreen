@@ -10,7 +10,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem
+} from 'reactstrap';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -21,77 +22,82 @@ export default class Navbar extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen 
+      isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
-      
-        <BootstrapNavbar color="light" light expand="md">
-          <NavbarBrand href="/">Logo</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-center" navbar>
+
+      <BootstrapNavbar color="light" light expand="md">
+        <NavbarBrand href="/">Logo</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-center" navbar>
             <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+              <DropdownToggle nav caret>
                   Catégories
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
                     Action
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Comedy
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Sci-fi
-                  </DropdownItem>
-                  <DropdownItem>
-                    
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem />
+                <DropdownItem>
                     Fantastique
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Thriller
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Horror
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Animation
-                  </DropdownItem>
-                  <DropdownItem>
-                    
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem />
+                <DropdownItem>
                     Documentary
-                  </DropdownItem>
-                  <DropdownItem>
+                </DropdownItem>
+                <DropdownItem>
                     Romantic
-                  </DropdownItem>
-                  
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              
-              <NavItem>
-                <NavLink href="">Watch Later</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">Favorites</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">I feel lucky</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href=""> <i class="fab fa-facebook fa-2x"></i> <i class="fab fa-instagram fa-2x"></i> <i class="fab fa-twitter fa-2x"></i></NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </BootstrapNavbar>
-      
+                </DropdownItem>
+
+              </DropdownMenu>
+            </UncontrolledDropdown>
+
+            <NavItem>
+              <NavLink href="">Watch Later</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="">Favorites</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="">I feel lucky</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="">
+                {' '}
+                <i className="fab fa-facebook fa-2x" />
+                {' '}
+                <i className="fab fa-instagram fa-2x" />
+                {' '}
+                <i className="fab fa-twitter fa-2x" />
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </BootstrapNavbar>
+
     );
   }
 }

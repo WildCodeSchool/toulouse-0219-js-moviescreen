@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Card, Button, CardImg, CardBody } from 'reactstrap';
+import {
+  Card, Button, CardImg, CardBody
+} from 'reactstrap';
 
-const TheaterCard = (props) => {
-
-  return (
-    <div className="container">
-      {
+const TheaterCard = (props) => (
+  <div className="container">
+    {
         props.movie.map(({ title, poster_path, id }) => (
           <Card key={id} className="moviecard">
             <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${poster_path}`} alt={title} />
@@ -15,9 +15,8 @@ const TheaterCard = (props) => {
           </Card>
         ))
       }
-    </div>
+  </div>
 
-  );
-};
+);
 
 export default TheaterCard;
