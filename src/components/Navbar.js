@@ -31,71 +31,70 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-
-      <BootstrapNavbar color="light" light expand="md">
-        <NavbarBrand href="/">Logo</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-center" navbar>
+      <BootstrapNavbar className="navbarbg" light expand="md">
+        <NavbarBrand className=" nav-pills homebutton" href="/"><span className="blush">MovieScreen</span></NavbarBrand>
+        <NavbarToggler className=" blush" onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar className="blush">
+          <Nav className="navbar-expand-lg nav-pills blush" navbar>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                  Catégories
+              <DropdownToggle className="blush" nav caret>
+                <span className="blush">Categories</span>
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                    Action
+                  Action
                 </DropdownItem>
                 <DropdownItem>
-                    Comedy
+                  Comedy
                 </DropdownItem>
                 <DropdownItem>
-                    Sci-fi
-                </DropdownItem>
-                <DropdownItem />
-                <DropdownItem>
-                    Fantastique
-                </DropdownItem>
-                <DropdownItem>
-                    Thriller
-                </DropdownItem>
-                <DropdownItem>
-                    Horror
-                </DropdownItem>
-                <DropdownItem>
-                    Animation
+                  Sci-fi
                 </DropdownItem>
                 <DropdownItem />
                 <DropdownItem>
-                    Documentary
+                  Fantastique
                 </DropdownItem>
                 <DropdownItem>
-                    Romantic
+                  Thriller
+                </DropdownItem>
+                <DropdownItem>
+                  Horror
+                </DropdownItem>
+                <DropdownItem>
+                  Animation
+                </DropdownItem>
+                <DropdownItem />
+                <DropdownItem>
+                  Documentary
+                </DropdownItem>
+                <DropdownItem>
+                  Romantic
                 </DropdownItem>
 
               </DropdownMenu>
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink href="">Watch Later</NavLink>
+              <NavLink className="blush" href=""><span className="blush">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Favorites</NavLink>
+              <NavLink className="blush" href=""><span className="blush">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">I feel lucky</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="">
-                {' '}
-                <i className="fab fa-facebook fa-2x" />
-                {' '}
-                <i className="fab fa-instagram fa-2x" />
-                {' '}
-                <i className="fab fa-twitter fa-2x" />
-              </NavLink>
+              <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
+        <NavItem className="medialogo nav-pills justify-content-end">
+          <NavLink href="">
+
+            <i className="fab fa-facebook fa-1x blush mr-3" />
+
+            <i className="fab fa-instagram fa-1x blush mr-3" />
+
+            <i className="fab fa-twitter fa-1x blush mr-3" />
+          </NavLink>
+        </NavItem>
       </BootstrapNavbar>
 
     );

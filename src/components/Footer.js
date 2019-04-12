@@ -1,64 +1,24 @@
 import React from 'react';
-import { Table } from 'reactstrap';
-import {
-  Button, Modal, ModalHeader, ModalBody, ModalFooter, Input
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 export default class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-      unmountOnClose: true
-    };
-
-    this.toggle = this.toggle.bind(this);
-    this.changeUnmountOnClose = this.changeUnmountOnClose.bind(this);
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
-  }
-
-  changeUnmountOnClose(e) {
-    const value = e.target.value;
-    this.setState({ unmountOnClose: JSON.parse(value) });
-  }
-
   render() {
     return (
-      <Table dark className="fond-foot">
-
-        <tbody>
-
-
-          <tr>
-            <td>Catégories</td>
-            <td>Jacob</td>
-
-          </tr>
-          <tr>
-            <td>
-              <Button color="muted" className="text-white" onClick={this.toggle}>Contact Us</Button>
-              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} unmountOnClose={this.state.unmountOnClose}>
-                <ModalHeader toggle={this.toggle}>text title</ModalHeader>
-                <ModalBody>
-                  <Input type="textarea" placeholder="Write something (data should remain in modal if unmountOnClose is set to false)" rows={5} />
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="primary" onClick={this.toggle}>Do Something</Button>
-                  {' '}
-                  <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                </ModalFooter>
-              </Modal>
-            </td>
-            <td> Crédits</td>
-
-          </tr>
-        </tbody>
-      </Table>
+      <Container className="footercontainer">
+        <Row>
+          <Col>
+            <i className="fab fa-facebook fa-2x blush mr-3" />
+            <i className="fab fa-instagram fa-2x blush mr-3" />
+            <i className="fab fa-twitter fa-2x blush mr-3" />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="blush footerquote">"Mama always said life was like React. You never know what you're gonna get"</Col>
+        </Row>
+        <Row>
+          <Col className="blush footercredit">From Toulouse With &#128156; </Col>
+        </Row>
+      </Container>
     );
   }
 }
