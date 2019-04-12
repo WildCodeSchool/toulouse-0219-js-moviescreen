@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-slick": "^0.23.2",
+    "reactstrap": "^7.1.0",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,7 +30,8 @@
       "react/jsx-filename-extension": 0,
       "no-console": 0,
       "comma-dangle": 0,
-      "arrow-parens": 0
+      "arrow-parens": 0,
+      "camelcase": 0
     }
   },
   "browserslist": [

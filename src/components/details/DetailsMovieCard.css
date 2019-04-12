@@ -1,0 +1,36 @@
+* {
+    color: #444444;
+}
+
+.my-card-img img{
+    width: 600px;
+    height: 750px;
+}
+
+.my-card-body {
+    height: 100%;
+}
+
+.my-genre {
+    padding: 5px 10px;
+    border: solid 0.5px #888888;
+    background-color: #f4f8ff;
+    margin: 5px;
+    font-weight: normal;
+}
+
+.my-video-player {
+    width: 150px;
+    position: absolute;
+    top: 320px;
+    left: 180px;    
+}
+
+.my-actor-profile-img {
+    width: 150px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 1rem;
+}
+
+
