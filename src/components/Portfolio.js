@@ -33,7 +33,7 @@ export default class Trends extends React.Component {
   }
 
   render() {
-    let cut = cutting(this.state.movies);
+    const cut = cutting(this.state.movies);
     return (
       <Container className="trendsportfolio">
         <Row className="p-2">

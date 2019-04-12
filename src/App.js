@@ -4,12 +4,11 @@ import {Route} from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import movies from './popular-movies';
-import FavoriteButton from './FavoriteButton';
+
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';
-import FavoriteFinal from './components/FavoriteFinal';
+
 
 
 
@@ -20,6 +19,7 @@ class App extends Component {
       favorites: []
     }
   }
+  
   ajoutFav = (id) => {
     const newFavorites = [...this.state.favorites]
     if (this.state.favorites.indexOf(id) >= 0) {
@@ -30,6 +30,7 @@ class App extends Component {
       this.setState({ favorites: newFavorites })
     }
   }
+
   render() {
     return (
  
@@ -40,10 +41,8 @@ class App extends Component {
 
         <Route path="/" exact component={Homepage} />
         <Route path="/details/:id" exact component={MovieDetails} />
-        <Route path="/favorite-and-other" component={Favorite} />
-      
+        <Route path="/favorite-and-other" render={(props) => <Favorite {...props} favorites={this.state.favorites}/>} />
         
-
         <footer className="foot">
           <Footer />
         </footer>
