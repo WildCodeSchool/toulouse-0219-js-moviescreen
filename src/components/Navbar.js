@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -78,7 +79,7 @@ export default class Navbar extends React.Component {
               <NavLink className="blush" href=""><span className="blush">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="blush" href=""><span className="blush">Favorites</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/favorites"><span className="blush">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
