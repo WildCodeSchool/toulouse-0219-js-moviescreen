@@ -1,43 +1,79 @@
-:root {
-  --primary-color: #FF6F61;
-  --secondary-color: #616247;
-  --dark-color: #616247;
-  --light-color: #F0EDE5;
-  --info-color: #B7855F;
-  --trans: all 600ms;
-}
-
-.btn-info {
-background-color: #B7855F;
-color:#B7855F;
-border-color: #B7855F;
-}
- 
-.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
- 
-background-color: #B7855F;
-color:#B7855F;
-border-color: #B7855F;
-}
-
 .App {
   text-align: center;
   background-color: #000C0B;
+  color: #B7855F;
+}
+
+.nav-pills {
+  display: flex;
+  list-style-type: none;
+  margin:  auto;
+  font-size: 35px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.homebutton {
+  font-size: 40px;
+}
+
+.navbarbg {
+  background-color: transparent;
+  padding-bottom: 120px;
+}
+
+.white {
+  color: white;
+}
+
+.blush {
+  color: #B7855F;
 }
 
 h2{
-  margin-top: 50px;
+  margin-top: 70px;
   color: #B7855F;
   font-size: 55px;
   font-family: 'Fascinate Inline', cursive;
 }
-.fond-foot {
-  background-color: black;
-  color:white;
-}
 
 .cardimage, .posterfolio, .trendscol {
   border-radius: 15px;
+}
+
+/* DetailPage */
+
+.castingcard, .castinggroup, .detailcard{
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #B7855F;
+}
+
+.reviewcard {
+  background-color: transparent;
+  color: white;
+  border-color: #B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 21px;
+} 
+
+.my-review {
+  max-height: 197px;
+overflow: auto;
+}
+
+.castingcard {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.castingbody {
+  color: #B7855F;
+}
+
+.castingcharacter {
+  color: white;
 }
 
 .moviecard, .actorcard {
@@ -47,7 +83,7 @@ h2{
   background-color: transparent;
   }
 
-.actorname {
+.actorname, .my-card-body {
   color: #B7855F;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 25px;
@@ -59,3 +95,46 @@ h2{
   border-radius: 15px;
 }
 
+.actordeckcontainer {
+  margin-bottom: 100px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+.detailcontainer {
+  margin-bottom: 50px;
+}
+
+/* Footer */
+
+.footercontainer {
+  padding-bottom: 30px;
+  padding-top: 100px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.footerquote {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.footercredit {
+  font-size: 20px;
+}
+.card-essai {
+  height: 30%;
+  background-color: transparent;
+  border-color: transparent;
+}
+.f-dis {
+  color:#B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+}
+.f-diss {
+  color:#B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+.myNavEx {
+  color: orange;
+  background-color: pink;
+}
