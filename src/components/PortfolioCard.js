@@ -12,7 +12,6 @@ const PortfolioCard = (props) => (
             </Card>
           </Link>
         ))}
-
   </div>
 );
 export default PortfolioCard;

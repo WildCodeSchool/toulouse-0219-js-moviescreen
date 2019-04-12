@@ -14,9 +14,7 @@ const ActorCards = (props) => (
           <Button outline color="info" className="buttoncard">See More</Button>
         </CardBody>
       </Card>
-    ))
-      }
+    ))}
   </div>
-
 );
 export default ActorCards;
