@@ -41,8 +41,8 @@ class App extends Component {
         
         
       
-        <Favorite movies={movies.results} favorites={this.state.favorites} />
-        <FavoriteButton ajoutFav={this.ajoutFav} />
+        {/* <Favorite movies={movies.results} favorites={this.state.favorites} />
+        <FavoriteButton ajoutFav={this.ajoutFav} /> */}
 
         <footer className="foot">
           <Footer />

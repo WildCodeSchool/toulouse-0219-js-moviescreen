@@ -32,9 +32,9 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <BootstrapNavbar className="navbarbg" light expand="md">
-        <NavbarBrand className="navbarbg nav-pills homebutton" href="/"><span className="blush">Home</span></NavbarBrand>
-        <NavbarToggler className="navbarbg blush" onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar className=" navbarbg blush">
+        <NavbarBrand className=" nav-pills homebutton" href="/"><span className="blush">MovieScreen</span></NavbarBrand>
+        <NavbarToggler className=" blush" onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar className="blush">
           <Nav className="navbar-expand-lg nav-pills blush" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle className="blush" nav caret>
@@ -83,18 +83,18 @@ export default class Navbar extends React.Component {
             <NavItem>
               <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
             </NavItem>
-            <NavItem className="medialogo d-flex justify-content-end">
-              <NavLink className="blush" href="">
-                {' '}
-                <i className="fab fa-facebook fa-2x blush" />
-                {' '}
-                <i className="fab fa-instagram fa-2x blush" />
-                {' '}
-                <i className="fab fa-twitter fa-2x blush" />
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
+        <NavItem className="medialogo nav-pills justify-content-end">
+              <NavLink href="">
+              
+                <i className="fab fa-facebook fa-1x blush mr-3" />
+            
+                <i className="fab fa-instagram fa-1x blush mr-3" />
+                
+                <i className="fab fa-twitter fa-1x blush mr-3" />
+              </NavLink>
+            </NavItem>
       </BootstrapNavbar>
 
     );
