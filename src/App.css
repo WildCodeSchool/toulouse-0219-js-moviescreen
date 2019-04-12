@@ -1,21 +1,148 @@
 .App {
   text-align: center;
+  background-color: #000C0B;
+  color: #B7855F;
 }
 
-
-.actorcardscontainer {
-  margin-bottom: 100px;
-  margin-top: 200px;
+.nav-pills {
+  display: flex;
+  list-style-type: none;
+  margin:  auto;
+  font-size: 35px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-.moviecard {
+.homebutton {
+  font-size: 40px;
+}
+
+.navbarbg {
+  background-color: transparent;
+  padding-bottom: 120px;
+}
+
+.white {
+  color: white;
+}
+
+.blush {
+  color: #B7855F;
+}
+
+h2{
+  margin-top: 70px;
+  color: #B7855F;
+  font-size: 55px;
+  font-family: 'Fascinate Inline', cursive;
+}
+
+.cardimage, .posterfolio, .trendscol {
+  border-radius: 15px;
+}
+
+.randommoviecard {
   margin-bottom: 40px;
   margin-top: 40px;
   border-color: transparent;
+  background-color: transparent;
   height: 600px;
   width: 300px;
+}
+/* DetailPage */
 
-
-
+.castingcard, .castinggroup, .detailcard{
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #B7855F;
 }
 
+.reviewcard {
+  background-color: transparent;
+  color: white;
+  border-color: #B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 21px;
+} 
+
+.my-review {
+  max-height: 197px;
+overflow: auto;
+}
+
+.castingcard {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.castingbody {
+  color: #B7855F;
+}
+
+.castingcharacter {
+  color: white;
+}
+
+.moviecard, .actorcard {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-color: transparent;
+  background-color: transparent;
+  }
+
+.actorname, .my-card-body {
+  color: #B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+}
+
+.upcomingslidercontainer,.theaterslidercontainer, .trendsportfolio, .actordeckcontainer {
+  margin-bottom: 200px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+
+.actordeckcontainer {
+  margin-bottom: 100px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+.detailcontainer {
+  margin-bottom: 50px;
+}
+
+/* Footer */
+
+.footercontainer {
+  padding-bottom: 30px;
+  padding-top: 100px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.footerquote {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.footercredit {
+  font-size: 20px;
+}
+.card-essai {
+  height: 30%;
+  background-color: transparent;
+  border-color: transparent;
+}
+.f-dis {
+  color:#B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+}
+.f-diss {
+  color:#B7855F;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+.myNavEx {
+  color: orange;
+  background-color: pink;
+}
