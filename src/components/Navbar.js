@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <BootstrapNavbar className="navbarbg" light expand="md">
-        <NavbarBrand className=" nav-pills homebutton" href="/"><span className="blush">MovieScreen</span></NavbarBrand>
+        <NavbarBrand tag={Link} className=" nav-pills homebutton" to="/"><span className="blush">MovieScreen</span></NavbarBrand>
         <NavbarToggler className=" blush" onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar className="blush">
           <Nav className="navbar-expand-lg nav-pills blush" navbar>

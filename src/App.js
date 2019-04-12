@@ -40,7 +40,7 @@ class App extends Component {
         </header>
 
         <Route path="/" exact component={Homepage} />
-        <Route path="/MovieDetails/:id" exact component={MovieDetails} />
+        <Route path="/movie-details/:id" exact component={MovieDetails} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites}/>} />
         <footer className="foot">
           <Footer />
