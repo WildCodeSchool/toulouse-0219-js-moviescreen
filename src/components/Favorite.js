@@ -28,6 +28,7 @@ class Favorite extends React.Component {
   }
 
   render() {
+
     return (
 
     // this.state.movies.filter(movie =>  this.props.favorites.includes(movie.id))
@@ -40,7 +41,7 @@ class Favorite extends React.Component {
     //   ))
       <div>
 
-        <FavoriteList movies={this.state.movies} />
+        <FavoriteList ajoutFav={this.props.ajoutFav} movies={this.state.movies.filter(movie =>  this.props.favorites.includes(movie.id))} />
       </div>
 
     );
