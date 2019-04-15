@@ -20,8 +20,6 @@ const FavoriteList = ({ movies }) => (
               <CardBody>
                 <CardTitle className="f-dis">{movie.original_title}</CardTitle>
                 <CardSubtitle className="f-diss">{movie.tagline}</CardSubtitle>
-
-
               </CardBody>
             </Card>
 

@@ -82,9 +82,9 @@ class DetailsMovieCard extends Component {
                 Vote:
                   {vote_average}
                 </h4>
-                <a href={button1} className="btn btn-primary my-btn btn-block">
+                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
-                </a>
+                </button>
                 <a href={button2} className="btn btn-primary my-btn btn-block">
                   Add to watch later
                 </a>
