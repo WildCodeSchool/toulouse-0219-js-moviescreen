@@ -82,7 +82,7 @@ export default class Navbar extends React.Component {
               <NavLink tag={Link} className="blush" to="/favorites"><span className="blush">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/i-feel-lucky"><span className="blush">I feel lucky</span></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
