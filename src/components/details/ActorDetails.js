@@ -9,13 +9,14 @@ class ActorDetails extends Component {
       birthday,
       place_of_birth,
       biography,
-      profile_path
+      profile_path,
+      id
     } = this.props;
 
     return (
       <div>
         <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
-        <ModalBody className="m-2">
+        <ModalBody className="m-2" onClick={this.handleClick}>
           <img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${profile_path}`}
             className="my-actor-profile-img mr-3"

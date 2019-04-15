@@ -82,10 +82,10 @@ class DetailsMovieCard extends Component {
                 Vote:
                   {vote_average}
                 </h4>
-                <a href={button1} className="btn btn-primary my-btn btn-block">
+                <a href={button1} className="btn btn-info my-btn btn-block">
                   Add to my favorits
                 </a>
-                <a href={button2} className="btn btn-primary my-btn btn-block">
+                <a href={button2} className="btn btn-info my-btn btn-block">
                   Add to watch later
                 </a>
               </div>

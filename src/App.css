@@ -42,7 +42,12 @@ h2{
 
 /* DetailPage */
 
-.castingcard, .castinggroup, .detailcard{
+.my-btn {
+  color: #ffffff !important;
+}
+
+.castingcard, .castinggroup, .detailcard {
+  text-align: left;
   margin-bottom: 40px;
   margin-top: 40px;
   border-color: transparent;
@@ -59,8 +64,8 @@ h2{
 } 
 
 .my-review {
-  max-height: 197px;
-overflow: auto;
+  max-height: 190px;
+  overflow: auto;
 }
 
 .castingcard {

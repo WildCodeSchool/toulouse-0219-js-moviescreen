@@ -22,16 +22,6 @@ const moviesTemp = [
   },
 ];
 
-// function cutting(arr) {
-//   const size = 1;
-//   const finalarr = [];
-//   for (let i = 0; i < 5; i += size) {
-//     finalarr.push(arr.slice(i, i + size));
-//   }
-//   return finalarr;
-// }
-
-
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
@@ -90,7 +80,6 @@ class MovieDetails extends Component {
     return (
       <div className="row">
         <div className="container">
-
           <DetailsMovieCard {...this.state.movie} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />

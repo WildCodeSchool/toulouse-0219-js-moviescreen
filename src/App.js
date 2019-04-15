@@ -4,12 +4,9 @@ import {Route} from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';
-
-
 
 
 class App extends Component {
@@ -52,27 +49,3 @@ class App extends Component {
 }
 
 export default App;
-
-// RESULTS MAPPED
-
-// class App extends Component {
-//   render() {
-//     const movieGenres = genres.genres.filter(
-//       genre => popular.results[0].genre_ids.includes(genre.id)
-//     );
-//     return (
-//       <div>
-//         <div className="row">
-//           <div className="container">
-//             {popular.results.map(singleResult => {
-//               return (
-//                 <DetailsMovieCard {...singleResult} {...movies[0]} {...movieGenres[0]} />
-//               )
-//             })
-//             }
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }

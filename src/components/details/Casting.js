@@ -8,16 +8,28 @@ import {
   CardBody,
   Modal,
 } from 'reactstrap';
+import axios from 'axios';
 import ActorDetails from './ActorDetails';
 
 class Casting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      actor: {}
     };
 
     this.toggle = this.toggle.bind(this);
+  }
+
+  componentDidMount() {
+    const person_id = this.props.match.params.id;
+    const actorUrl = `https://api.themoviedb.org/3/person/${person_id}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
+    axios.get(actorUrl)
+      .then(response => response.data)
+      .then(data => this.setState({
+        actor: data
+      }));
   }
 
   toggle() {
@@ -38,7 +50,7 @@ class Casting extends React.Component {
         </div>
         <div className="card m-4 castinggroup">
           <CardGroup>
-            {this.props.casting.map(({ profile_path, name, character }) => (
+            {this.props.casting.map(({ profile_path, name, character, id }) => (
               <Card className="castingcard">
                 {this.props.buttonLabel}
                 <CardImg
@@ -54,6 +66,7 @@ class Casting extends React.Component {
                 <CardBody className="castingbody">
                   <CardTitle className="h5 font-weight-bold castingbody">{name}</CardTitle>
                   <CardSubtitle className="castingcharacter">{character}</CardSubtitle>
+                  <div>{id}</div>
                 </CardBody>
               </Card>
             ))}
@@ -63,7 +76,7 @@ class Casting extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            {/* <ActorDetails {...actors} />  */}
+            <ActorDetails actor={this.state.actor}/>
           </Modal>
         </div>
       </div>
