@@ -10,17 +10,17 @@ import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
 import axios from 'axios';
 
-const moviesTemp = [
-  {
-    director: 'Dean DeBlois',
-    button1: 'http://www.google.com',
-    button2: 'http://www.google.com',
-    date: 'February 22, 2019',
-    status: 'Released',
-    trailer: 'http://www.google.com',
-    avatar: 'https://www.themoviedb.org/u/cherry19',
-  },
-];
+// const moviesTemp = [
+//   {
+//     director: 'Dean DeBlois',
+//     button1: 'http://www.google.com',
+//     button2: 'http://www.google.com',
+//     date: 'February 22, 2019',
+//     status: 'Released',
+//     trailer: 'http://www.google.com',
+//     avatar: 'https://www.themoviedb.org/u/cherry19',
+//   },
+// ];
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -68,7 +68,7 @@ class MovieDetails extends Component {
       .then(response => response.data)
       .then(data => this.setState({
         casting: data.cast.slice(0, 5)
-      }));
+      }))
   }
 
   render() {
@@ -82,7 +82,7 @@ class MovieDetails extends Component {
         <div className="container">
           <DetailsMovieCard {...this.state.movie} />
           <Reviews reviews={this.state.reviews} />
-          <CastingCard casting={this.state.casting} />
+          <CastingCard casting={this.state.casting}/>
         </div>
       </div>
     );

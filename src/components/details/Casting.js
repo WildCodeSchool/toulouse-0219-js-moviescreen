@@ -16,24 +16,23 @@ class Casting extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      actor: {}
+      person_id: 449,
     };
 
     this.toggle = this.toggle.bind(this);
   }
 
   componentDidMount() {
-    const person_id = this.props.match.params.id;
-    const actorUrl = `https://api.themoviedb.org/3/person/${person_id}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
+    const actorUrl = `https://api.themoviedb.org/3/person/${this.state.person_id}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
     axios.get(actorUrl)
       .then(response => response.data)
       .then(data => this.setState({
-        actor: data
+        actor: data,
       }));
   }
 
   toggle() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       modal: !prevState.modal
     }));
   }
@@ -76,7 +75,7 @@ class Casting extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ActorDetails actor={this.state.actor}/>
+            <ActorDetails {...this.state.actor}/>
           </Modal>
         </div>
       </div>
