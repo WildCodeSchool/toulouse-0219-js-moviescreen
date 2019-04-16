@@ -8,7 +8,7 @@
   display: flex;
   list-style-type: none;
   margin:  auto;
-  font-size: 35px;
+  font-size: 30px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
@@ -31,9 +31,9 @@
 
 h2{
   margin-top: 70px;
-  color: #B7855F;
-  font-size: 55px;
-  font-family: 'Fascinate Inline', cursive;
+  color: white;
+  font-size: 60px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .cardimage, .posterfolio, .trendscol {
@@ -49,7 +49,11 @@ h2{
   background-color: transparent;
   color: #B7855F;
 }
-
+.my-genre {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 25px;
+}
 .reviewcard {
   background-color: transparent;
   color: white;
@@ -58,8 +62,9 @@ h2{
   font-size: 21px;
 } 
 
+
 .my-review {
-  max-height: 197px;
+  max-height: 250px;
 overflow: auto;
 }
 

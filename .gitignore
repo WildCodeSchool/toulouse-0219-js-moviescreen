@@ -2,6 +2,9 @@
 package-lock.json
 yarn.lock
 
+# API Key 
+6839ebece0568da454bfdb445830df32
+
 # dependencies
 /node_modules
 /.pnp

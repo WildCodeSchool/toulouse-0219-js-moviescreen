@@ -2,35 +2,18 @@
 import React, { Component } from 'react';
 import popular from '../popular-movies.json';
 import genres from '../genres.json';
-import reviews from './details/reviews.json';
-import casting from './details/casting.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
 import axios from 'axios';
 
-const moviesTemp = [
-  {
-    director: 'Dean DeBlois',
-    button1: 'http://www.google.com',
-    button2: 'http://www.google.com',
-    date: 'February 22, 2019',
-    status: 'Released',
-    trailer: 'http://www.google.com',
-    avatar: 'https://www.themoviedb.org/u/cherry19',
-  },
-];
-
-// function cutting(arr) {
-//   const size = 1;
-//   const finalarr = [];
-//   for (let i = 0; i < 5; i += size) {
-//     finalarr.push(arr.slice(i, i + size));
-//   }
-//   return finalarr;
-// }
-
+function empty() {
+  if (this.state.review) {
+    return ('Sorry, No Reviews Yet');
+  }
+  return <Reviews reviews={this.state.reviews} />;
+}
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -38,7 +21,9 @@ class MovieDetails extends Component {
     this.state = {
       movie: {},
       reviews: [],
-      casting: []
+      casting: [],
+      genres: [],
+
     };
     this.getMovieDetail = this.getMovieDetail.bind(this);
     this.getMovieReview = this.getMovieReview.bind(this);
@@ -57,7 +42,7 @@ class MovieDetails extends Component {
     axios.get(movieurl)
       .then(response => response.data)
       .then(data => this.setState({
-        movie: data
+        movie: data, genres: data.genres
       }));
   }
 
@@ -91,7 +76,7 @@ class MovieDetails extends Component {
       <div className="row">
         <div className="container">
 
-          <DetailsMovieCard {...this.state.movie} />
+          <DetailsMovieCard {...this.state.movie} genres={this.state.genres} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />
         </div>
