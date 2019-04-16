@@ -16,7 +16,7 @@ class Text extends React.Component {
             <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${this.props.moviePoster}`} alt="Card " />
           </Link>
           <CardBody>
-            <CardTitle className="blush">{this.props.movieName}</CardTitle>
+            <CardTitle className="blush randommoviename">{this.props.movieName}</CardTitle>
           </CardBody>
         </Card>
       </div>

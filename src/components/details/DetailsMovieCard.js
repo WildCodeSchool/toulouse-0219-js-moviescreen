@@ -43,14 +43,6 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
-              <a href={`https://www.youtube.com/watch?v=${video}`} target="_blank">
-                <img
-                  src="https://cdn1.iconfinder.com/data/icons/social-media-glossy/512/7-player_windows_media_player_video_social-512.png"
-                  className="my-video-player"
-                  alt="Click to view the trailer"
-                  title="Click to view the trailer"
-                />
-              </a>
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
@@ -74,7 +66,7 @@ class DetailsMovieCard extends Component {
                 <p className="card-text">
                   <small className="blush">
                     Release date: 
-                    {release_date}
+                    <span className="white">{release_date}</span>
                   </small>
                 </p>
                 <p className="card-text pb-2 my-overview white">{overview}</p>
