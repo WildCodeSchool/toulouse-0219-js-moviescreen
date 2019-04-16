@@ -88,9 +88,7 @@ class MovieDetails extends Component {
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>
           <Player trailer={this.state.trailer} />
-            
         </div>
-
       </div>
     );
   }
