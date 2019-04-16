@@ -8,6 +8,7 @@ import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
+import Player from './details/Youtubeplayer';
 import axios from 'axios';
 
 
@@ -24,12 +25,14 @@ class MovieDetails extends Component {
     this.getMovieDetail = this.getMovieDetail.bind(this);
     this.getMovieReview = this.getMovieReview.bind(this);
     this.getMovieCast = this.getMovieCast.bind(this);
+    this.getTrailer = this.getTrailer.bind(this);
   }
 
   componentDidMount() {
     this.getMovieCast();
     this.getMovieDetail();
     this.getMovieReview();
+    this.getTrailer();
   }
 
   getMovieDetail() {
@@ -65,11 +68,11 @@ class MovieDetails extends Component {
 
   getTrailer() {
     const movieid = this.props.match.params.id;
-    const trailerurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=6839ebece0568da454bfdb445830df32`;
+    const trailerurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
     axios.get(trailerurl)
       .then(response => response.data)
       .then(data => this.setState({
-        trailer: data.results.find(video => video.type === 'trailer')
+        trailer: data.results.find(video => video.type === 'Trailer')
       }));
   }
 
@@ -83,7 +86,9 @@ class MovieDetails extends Component {
           <DetailsMovieCard {...this.state.movie} directing={this.state.directing} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />
-          <iframe>src={`https://youtu.be/${this.state.trailer.key}`}</iframe>
+          <h2>Trailer</h2>
+          <Player trailer={this.state.trailer} />
+            
         </div>
 
       </div>
