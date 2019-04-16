@@ -21,8 +21,8 @@ const FavoriteList = ({ movies , ajoutFav }) => (
                 <CardTitle className="f-dis">{movie.original_title}</CardTitle>
                 <CardSubtitle className="f-diss">{movie.tagline}</CardSubtitle>
               </CardBody>
-              <button onClick={()=>ajoutFav(movie.id)} className="btn btn-primary my-btn btn-block">
-                  Add to my favorits
+              <button onClick={()=>ajoutFav(movie.id)} className="btn btn-dark my-btn btn-block">
+                  Delete to my favorits
                 </button>
             </Card>
             
