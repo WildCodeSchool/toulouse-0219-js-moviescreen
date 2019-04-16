@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { ModalHeader, ModalBody } from 'reactstrap';
 import './DetailsMovieCard.css';
-import axios from 'axios';
 
 class ActorDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    };
-  }
-
   render() {
     const {
       name,
@@ -18,7 +10,6 @@ class ActorDetails extends Component {
       place_of_birth,
       biography,
       profile_path,
-      id
     } = this.props;
 
     return (
@@ -30,12 +21,6 @@ class ActorDetails extends Component {
             className="my-actor-profile-img mr-3"
             alt=""
           />
-          <p>
-            Id:
-            {' '}
-            <span className="font-weight-bold">{id}</span>
-          </p>
-          
           <p>
             Birthday:
             {' '}

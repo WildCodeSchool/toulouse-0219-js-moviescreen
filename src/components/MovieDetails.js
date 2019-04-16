@@ -1,26 +1,13 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import axios from 'axios';
 import popular from '../popular-movies.json';
 import genres from '../genres.json';
-import reviews from './details/reviews.json';
-import casting from './details/casting.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
+import CommentForm from './details/CommentForm';
 import './details/DetailsMovieCard.css';
-import axios from 'axios';
-
-// const moviesTemp = [
-//   {
-//     director: 'Dean DeBlois',
-//     button1: 'http://www.google.com',
-//     button2: 'http://www.google.com',
-//     date: 'February 22, 2019',
-//     status: 'Released',
-//     trailer: 'http://www.google.com',
-//     avatar: 'https://www.themoviedb.org/u/cherry19',
-//   },
-// ];
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -68,21 +55,20 @@ class MovieDetails extends Component {
       .then(response => response.data)
       .then(data => this.setState({
         casting: data.cast.slice(0, 5)
-      }))
+      }));
   }
 
   render() {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
-    // const review = cutting(reviews);
-    // const cast = cutting(casting)
     return (
       <div className="row">
         <div className="container">
           <DetailsMovieCard {...this.state.movie} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting}/>
+          <CommentForm />
         </div>
       </div>
     );

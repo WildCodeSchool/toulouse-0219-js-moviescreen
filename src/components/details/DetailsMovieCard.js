@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import trailers from './trailers.json';
 
 class DetailsMovieCard extends Component {
   render() {
@@ -23,7 +22,6 @@ class DetailsMovieCard extends Component {
       id,
       key,
     } = this.props;
-
 
     return (
       <div>
