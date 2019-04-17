@@ -2,8 +2,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { Progress } from 'reactstrap';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+
+
 
 class DetailsMovieCard extends Component {
   constructor(props) {
@@ -30,8 +30,6 @@ class DetailsMovieCard extends Component {
       id,
       key,
     } = this.props;
-
-// let now = Number({vote_average} * 10);
 
     return (
       <div>
@@ -64,18 +62,18 @@ class DetailsMovieCard extends Component {
                 </p>
                 <p className="blush">
                   Directed by :
-                  {'  '}
+                  {' '}
                   <span className="font-weight-bold white">{director}</span>
                 </p>
                 <p className="blush">
                   Status :
-                  {'  '}
+                  {' '}
                   <span className="font-weight-bold white">{status}</span>
                 </p>
                 <p className="card-text blush">
 
                   Release date :
-                  {'  '}
+                  {' '}
                   <span className="font-weight-bold white">{release_date}</span>
                 </p>
                 <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
@@ -84,9 +82,6 @@ class DetailsMovieCard extends Component {
                   {' '}
                   <span className="font-weight-bold white">{vote_average}</span>
                 </p>
-                 {/* <div className="text-center" />
-                <Progress className="mt-3 mb-3" value="rate({vote_average})" /> 
-                <ProgressBar className="mt-3 mb-3" variant="info" now={rate} label={`${rate}%`} srOnly/> */}
                 <a href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
                 </a>

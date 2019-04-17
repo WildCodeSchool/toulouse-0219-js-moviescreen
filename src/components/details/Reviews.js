@@ -43,8 +43,8 @@ class Reviews extends React.Component {
           <Nav className="reviewcard" tabs>
             {this.props.reviews.map(({ author }, index) => (
               <NavItem className="py-3 pl-3 font-weight-bold reviewcard">
-                <NavLink className="reviewcard card"
-                  active={classnames({ active: this.state.activeTab === index })}
+                <NavLink
+                  className={classnames({ active: this.state.activeTab === index })}
                   onClick={() => { this.toggle(index); }}
                 >
                   <span className="blush reviewname">{author}</span>
