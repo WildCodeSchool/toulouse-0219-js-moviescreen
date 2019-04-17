@@ -5,11 +5,8 @@ import {Route} from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-<<<<<<< HEAD
 import Search from './components/Search';
-=======
 import RandomPage from './components/RandomPage';
->>>>>>> dev
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';

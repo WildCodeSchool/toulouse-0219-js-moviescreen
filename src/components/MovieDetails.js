@@ -10,8 +10,6 @@ import Player from './details/Youtubeplayer';
 import axios from 'axios';
 
 
-<<<<<<< HEAD
-=======
 function empty() {
   if (this.state.review) {
     return ('Sorry, No Reviews Yet');
@@ -19,8 +17,6 @@ function empty() {
   return <Reviews reviews={this.state.reviews} />;
 }
 
-
->>>>>>> dev
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
