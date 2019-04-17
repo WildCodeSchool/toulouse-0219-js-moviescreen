@@ -79,7 +79,9 @@ class MovieDetails extends Component {
     axios.get(trailerurl)
       .then(response => response.data)
       .then(data => this.setState({
-        trailer: data.results.find(video => video.type === 'Trailer')
+        // if (!results) {return <h2>Sorry, No Trailer</h2>} return {
+        trailer: data.results.find(video => video.type === 'Trailer' || 'Clip' || 'Teaser' ) 
+      // }
       }));
   }
 
@@ -87,10 +89,7 @@ class MovieDetails extends Component {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
-<<<<<<< HEAD
 
-=======
->>>>>>> dev
     return (
       <div className="row">
         <div className="container">
