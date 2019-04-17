@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
-import ReactPlayer from 'react-player';
 
 class Player extends React.Component {
   render() {
@@ -28,19 +27,3 @@ class Player extends React.Component {
 }
 
 export default Player;
-
-
-// class ResponsivePlayer extends Component {
-//   render() {
-//     return (
-//       <div className='player-wrapper'>
-//         <ReactPlayer
-//           className='react-player'
-//           url={`https://www.youtube.com/watch?v=${this.props.trailer.key}`}
-//           width='100%'
-//           height='100%'
-//         />
-//       </div>
-//     )
-//   }
-// }
