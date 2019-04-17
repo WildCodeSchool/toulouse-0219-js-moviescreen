@@ -22,27 +22,16 @@ class App extends Component {
   }
   
   ajoutFav = (id) => {
-    
     const newFavorites = [...this.state.favorites]
     if (this.state.favorites.indexOf(id) >= 0) {
       newFavorites.splice(this.state.favorites.indexOf(id), 1)
       this.setState({ favorites: newFavorites }, () => localStorage.setItem('favoris', JSON.stringify(this.state.favorites)) )
-      
-   
     } else {
-      
       newFavorites.push(id)
       this.setState({ favorites: newFavorites }, () => localStorage.setItem('favoris', JSON.stringify(this.state.favorites)))
-
-    
-      
     }
-
 }
-
-
   
-
   render() {
     return (
  
