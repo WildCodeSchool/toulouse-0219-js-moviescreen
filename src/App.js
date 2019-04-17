@@ -42,6 +42,7 @@ class App extends Component {
         <Route path="/" exact component={Homepage} />
         <Route path="/movie-details/:id" exact component={MovieDetails} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites}/>} />
+        <Route path="/search" component={Search} />
         <footer className="foot">
           <Footer />
         </footer>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Button, Input, Container, Row, Col } from 'reactstrap';
+import ResultMovie from './ResultMovie';
 import axios from 'axios';
 
-class Finder extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,60 +11,45 @@ class Finder extends Component {
       results: []
     };
     this.getInfo = this.getInfo.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.searchChangeHandler = this.searchChangeHandler.bind(this);
   }
 
-  componentDidMount() {
-    this.getInfo();
-  }
-
-  getInfo() {
-    axios.get(`https://api.themoviedb.org/3/search/multi?api_key=6839ebece0568da454bfdb445830df32&language=en-US&query=${this.state.query}&page=1&include_adult=true`)
+  getInfo(searchTerm) {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=6839ebece0568da454bfdb445830df32&language=en-US&query=${searchTerm}&page=1&include_adult=true`)
       .then(response => response.data)
-      .then(data => this.setState({ movies: data.results }));
+      .then(data => this.setState({ results: data.results.slice(0, 30) }));
   }
 
-
-  handleInputChange(event) {
-    this.setState({
-      query: this.search.value
-    });
+  searchChangeHandler(event) {
+    let searchTerm = event.target.value;
+    this.getInfo(searchTerm);
   }
 
   render() {
     return (
-      // <form>
-      //   <InputGroup>
-      //     <Input placeholder="Search for..."
-      //       onChange={this.handleInputChange}
-      //       value={this.state.query} />
-      //     <InputGroupAddon addonType="append">
-      //       <Button onClick={this.handleInputChange} type="submit" value="search" color="secondary">Search</Button>
-      //     </InputGroupAddon>
-      //   </InputGroup>
-      //   <p>{this.state.results}</p>
-      // </form>
-      <form onSubmit={this.submitForm}>
-        <fieldset>
-          <div className="form-data">
-            <input
-              type="text"
-              id="title"
-              name="title"
-              onChange={this.onChange}
-              value={this.state.title}
-            />
-          </div>
-          <InputGroupAddon addonType="append">
-            <Button onClick={this.handleInputChange} type="submit" value="search" color="secondary">Search</Button>
-          </InputGroupAddon>
-          
-            <input onClick={this.titleChange} type="submit" value="Envoyer" />
-        
-        </fieldset>
-      </form>
+      <div>
+        <form onSubmit={this.submitForm}>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="search"
+            onChange={this.searchChangeHandler}
+          />
+
+        </form>
+        <div className="container">
+          <Row className="p-2">
+            {this.state.results.map((movie, index) => (
+              <Col lg="3" md="4" sm="6" xs="6" className="trendscol">
+                <ResultMovie key={index} movie={movie} />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </div>
     );
   }
 }
 
-export default Finder;
+export default Search;

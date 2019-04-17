@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import Search from './Search';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends React.Component {
@@ -83,7 +82,7 @@ export default class Navbar extends React.Component {
               <NavLink tag={Link} className="blush" to="/favorites"><span className="blush">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} className="blush" to="/finder"><span className="blush">Finder</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/search"><span className="blush">Finder</span></NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
