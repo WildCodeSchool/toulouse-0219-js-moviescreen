@@ -64,7 +64,7 @@ class DetailsMovieCard extends Component {
                 <p className="card-text">
                   <small className="blush">
                     Release date: 
-                    {release_date}
+                    <span className="white">{release_date}</span>
                   </small>
                 </p>
                 <p className="card-text pb-2 my-overview white">{overview}</p>
