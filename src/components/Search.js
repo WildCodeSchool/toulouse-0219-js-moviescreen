@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
 import axios from 'axios';
 
-class Search extends Component {
+class Finder extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +18,7 @@ class Search extends Component {
   }
 
   getInfo() {
-    axios.get(`https://api.themoviedb.org/3/search/${this.state.query}?api_key=6839ebece0568da454bfdb445830df32&language=en-US&page=1`)
+    axios.get(`https://api.themoviedb.org/3/search/multi?api_key=6839ebece0568da454bfdb445830df32&language=en-US&query=${this.state.query}&page=1&include_adult=true`)
       .then(response => response.data)
       .then(data => this.setState({ movies: data.results }));
   }
@@ -31,18 +32,38 @@ class Search extends Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          placeholder="Search for..."
-          onChange={this.handleInputChange}
-          value={this.state.query}
-        />
-        <button onClick={this.handleInputChange} type="submit" value="search" />
-        <p>{this.state.results}</p>
+      // <form>
+      //   <InputGroup>
+      //     <Input placeholder="Search for..."
+      //       onChange={this.handleInputChange}
+      //       value={this.state.query} />
+      //     <InputGroupAddon addonType="append">
+      //       <Button onClick={this.handleInputChange} type="submit" value="search" color="secondary">Search</Button>
+      //     </InputGroupAddon>
+      //   </InputGroup>
+      //   <p>{this.state.results}</p>
+      // </form>
+      <form onSubmit={this.submitForm}>
+        <fieldset>
+          <div className="form-data">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              onChange={this.onChange}
+              value={this.state.title}
+            />
+          </div>
+          <InputGroupAddon addonType="append">
+            <Button onClick={this.handleInputChange} type="submit" value="search" color="secondary">Search</Button>
+          </InputGroupAddon>
+          
+            <input onClick={this.titleChange} type="submit" value="Envoyer" />
+        
+        </fieldset>
       </form>
     );
   }
 }
 
-export default Search;
+export default Finder;

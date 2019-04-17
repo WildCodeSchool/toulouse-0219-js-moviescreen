@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import Search from './components/Search';
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';
