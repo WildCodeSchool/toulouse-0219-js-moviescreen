@@ -3,8 +3,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 
-
-
 class DetailsMovieCard extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +61,7 @@ class DetailsMovieCard extends Component {
                 <p className="blush">
                   Directed by :
                   {' '}
-                  <span className="font-weight-bold white">{director}</span>
+                  <span className="font-weight-bold white">{this.props.directing.name}</span>
                 </p>
                 <p className="blush">
                   Status :
