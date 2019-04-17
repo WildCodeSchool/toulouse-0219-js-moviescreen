@@ -49,7 +49,7 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
-  
+
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
@@ -70,6 +70,7 @@ class DetailsMovieCard extends Component {
                   {' '}
                   <span className="font-weight-bold white">{status}</span>
                 </p>
+
                 <p className="card-text blush">
 
                   Release date :
@@ -81,6 +82,7 @@ class DetailsMovieCard extends Component {
                   Vote:
                   {' '}
                   <span className="font-weight-bold white">{vote_average}</span>
+
                 </p>
                 <a href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
