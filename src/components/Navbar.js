@@ -33,13 +33,13 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <BootstrapNavbar className="navbarbg" light expand="md">
-        <NavbarBrand tag={Link} className=" nav-pills homebutton" to="/"><span className="blush">MovieScreen</span></NavbarBrand>
-        <NavbarToggler className=" blush" onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar className="blush">
-          <Nav className="navbar-expand-lg nav-pills blush" navbar>
+        <NavbarBrand tag={Link} className=" nav-pills homebutton" to="/"><span className="white">MovieScreen</span></NavbarBrand>
+        <NavbarToggler className=" white" onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar className="white">
+          <Nav className="navbar-expand-lg nav-pills white" navbar>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className="blush" nav caret>
-                <span className="blush">Categories</span>
+              <DropdownToggle className="white" nav caret>
+                <span className="white">Categories</span>
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
@@ -76,16 +76,16 @@ export default class Navbar extends React.Component {
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink className="blush" href=""><span className="blush">Watch Later</span></NavLink>
+              <NavLink  href=""><span className="white">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} className="blush" to="/favorites"><span className="blush">Favorites</span></NavLink>
+              <NavLink tag={Link}  to="/favorites"><span className="white">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} className="blush" to="/search"><span className="blush">Finder</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="blush" href=""><span className="blush">I feel lucky</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/i-feel-lucky"><span className="blush">I feel lucky</span></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -93,10 +93,9 @@ export default class Navbar extends React.Component {
           <NavLink href="">
 
             <i className="fab fa-facebook fa-1x blush mr-3" />
-
             <i className="fab fa-instagram fa-1x blush mr-3" />
-
             <i className="fab fa-twitter fa-1x blush mr-3" />
+
           </NavLink>
         </NavItem>
       </BootstrapNavbar>

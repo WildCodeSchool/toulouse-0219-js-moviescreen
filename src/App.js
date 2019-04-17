@@ -1,10 +1,15 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import MovieGenerator from './components/RandomPage'
 import {Route} from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 import Search from './components/Search';
+=======
+import RandomPage from './components/RandomPage';
+>>>>>>> dev
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
 import './App.css';
@@ -43,7 +48,8 @@ class App extends Component {
         <Route path="/movie-details/:id" exact component={MovieDetails} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites}/>} />
         <Route path="/search" component={Search} />
-        <footer className="foot">
+        <Route path="/i-feel-lucky" exact component={RandomPage}></Route>
+    <footer className="foot">
           <Footer />
         </footer>
       </div>
