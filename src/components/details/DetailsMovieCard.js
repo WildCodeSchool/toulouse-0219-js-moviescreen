@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import trailers from './trailers.json';
 
 class DetailsMovieCard extends Component {
   render() {
@@ -16,8 +15,6 @@ class DetailsMovieCard extends Component {
       genre_ids,
       release_date,
       status,
-      video,
-      trailer,
       vote_average,
       name,
       id,
@@ -43,6 +40,7 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
+
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
@@ -56,7 +54,7 @@ class DetailsMovieCard extends Component {
                 <p className="blush">
                   Directed by:
                   {' '}
-                  <span className="font-weight-bold white">{director}</span>
+                  <span className="font-weight-bold white">{this.props.directing.name}</span>
                 </p>
                 <p className="blush">
                   Status:

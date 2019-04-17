@@ -8,28 +8,8 @@ import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
+import Player from './details/Youtubeplayer';
 import axios from 'axios';
-
-const moviesTemp = [
-  {
-    director: 'Dean DeBlois',
-    button1: 'http://www.google.com',
-    button2: 'http://www.google.com',
-    date: 'February 22, 2019',
-    status: 'Released',
-    trailer: 'http://www.google.com',
-    avatar: 'https://www.themoviedb.org/u/cherry19',
-  },
-];
-
-// function cutting(arr) {
-//   const size = 1;
-//   const finalarr = [];
-//   for (let i = 0; i < 5; i += size) {
-//     finalarr.push(arr.slice(i, i + size));
-//   }
-//   return finalarr;
-// }
 
 
 class MovieDetails extends Component {
@@ -38,17 +18,21 @@ class MovieDetails extends Component {
     this.state = {
       movie: {},
       reviews: [],
-      casting: []
+      casting: [],
+      directing: [],
+      trailer: [],
     };
     this.getMovieDetail = this.getMovieDetail.bind(this);
     this.getMovieReview = this.getMovieReview.bind(this);
     this.getMovieCast = this.getMovieCast.bind(this);
+    this.getTrailer = this.getTrailer.bind(this);
   }
 
   componentDidMount() {
     this.getMovieCast();
     this.getMovieDetail();
     this.getMovieReview();
+    this.getTrailer();
   }
 
   getMovieDetail() {
@@ -77,7 +61,18 @@ class MovieDetails extends Component {
     axios.get(casturl)
       .then(response => response.data)
       .then(data => this.setState({
-        casting: data.cast.slice(0, 5)
+        casting: data.cast.slice(0, 5),
+        directing: data.crew.find(person => person.job === 'Director')
+      }));
+  }
+
+  getTrailer() {
+    const movieid = this.props.match.params.id;
+    const trailerurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
+    axios.get(trailerurl)
+      .then(response => response.data)
+      .then(data => this.setState({
+        trailer: data.results.find(video => video.type === 'Trailer')
       }));
   }
 
@@ -85,15 +80,14 @@ class MovieDetails extends Component {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
-    // const review = cutting(reviews);
-    // const cast = cutting(casting)
     return (
       <div className="row">
         <div className="container">
-
-          <DetailsMovieCard {...this.state.movie} />
+          <DetailsMovieCard {...this.state.movie} directing={this.state.directing} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />
+          <h2>Trailer</h2>
+          <Player trailer={this.state.trailer} />
         </div>
       </div>
     );
