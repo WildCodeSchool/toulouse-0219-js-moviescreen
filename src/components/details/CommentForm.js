@@ -3,6 +3,7 @@ import {
   Button, Form, FormGroup, Label, Input
 } from 'reactstrap';
 import DisplayedMessage from './DisplayedMessage';
+import DisplayComment from './DisplayComment';
 
 class CommentForm extends Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class CommentForm extends Component {
       email: '',
       title: '',
       message: '',
-      displayNone: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,7 +38,7 @@ class CommentForm extends Component {
     if (this.state.name.length > 3 & this.state.email.includes("@") & this.state.message.length > 3 & this.state.title.length > 3) {
     this.setState({displayNone: false});
   } else (window.alert('All fields need to be filled. (At least 3 characters. Email must to include "@" ).')); 
-} 
+  } 
 
   render() {
     return (
@@ -46,8 +46,6 @@ class CommentForm extends Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              <h2 className="mb-5">Comments</h2>
-              <DisplayedMessage {...this.state} />
               <h4 className="mb-5 my-white-font">Enter Your Message</h4>
             </div>
           </div>
@@ -61,7 +59,7 @@ class CommentForm extends Component {
               id="exampleInput"
               placeholder="enter your name"
               onChange={this.handleChangeName}
-              value={this.state.name}
+              // value={this.state.name}
             />
           </FormGroup>
           <FormGroup>
@@ -72,7 +70,7 @@ class CommentForm extends Component {
               id="exampleEmail"
               placeholder="enter your email address"
               onChange={this.handleChangeEmail}
-              value={this.state.email}
+              // value={this.state.email}
             />
           </FormGroup>
           <FormGroup>
@@ -81,7 +79,7 @@ class CommentForm extends Component {
               type="input"
               name="input"
               id="exampleInput"
-              placeholder="chose a title"
+              placeholder="choose a title"
               onChange={this.handleChangeTitle}
               value={this.state.title}
             />

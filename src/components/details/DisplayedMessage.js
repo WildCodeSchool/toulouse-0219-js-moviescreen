@@ -3,26 +3,16 @@ import React, { Component } from 'react';
 // eslint-disable-next-line react/prefer-stateless-function
 class DisplayedMessage extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
   render() {
     const {
       name,
       email,
       message,
-      displayNone,
       title,
     } = this.props;
 
-    let myClass = displayNone ? "d-none" : "d-block"
-
     return (
-      <div className={myClass}>
+      <div>
         <div className="card mb-4">
           <div className="card-header">
           <h4>{title}</h4>
