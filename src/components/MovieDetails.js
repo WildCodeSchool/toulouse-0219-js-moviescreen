@@ -2,14 +2,20 @@
 import React, { Component } from 'react';
 import popular from '../popular-movies.json';
 import genres from '../genres.json';
-import reviews from './details/reviews.json';
-import casting from './details/casting.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
 import './details/DetailsMovieCard.css';
 import Player from './details/Youtubeplayer';
 import axios from 'axios';
+
+
+function empty() {
+  if (this.state.review) {
+    return ('Sorry, No Reviews Yet');
+  }
+  return <Reviews reviews={this.state.reviews} />;
+}
 
 
 class MovieDetails extends Component {
@@ -19,8 +25,10 @@ class MovieDetails extends Component {
       movie: {},
       reviews: [],
       casting: [],
+      genres: [],
       directing: [],
       trailer: [],
+
     };
     this.getMovieDetail = this.getMovieDetail.bind(this);
     this.getMovieReview = this.getMovieReview.bind(this);
@@ -41,7 +49,7 @@ class MovieDetails extends Component {
     axios.get(movieurl)
       .then(response => response.data)
       .then(data => this.setState({
-        movie: data
+        movie: data, genres: data.genres
       }));
   }
 
@@ -83,7 +91,7 @@ class MovieDetails extends Component {
     return (
       <div className="row">
         <div className="container">
-          <DetailsMovieCard {...this.state.movie} directing={this.state.directing} />
+          <DetailsMovieCard {...this.state.movie} genres={this.state.genres} directing={this.state.directing} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>

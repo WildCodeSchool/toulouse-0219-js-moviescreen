@@ -4,6 +4,14 @@
 import React, { Component } from 'react';
 
 class DetailsMovieCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      vote: '',
+    };
+  }
+
+
   render() {
     const {
       poster_path,
@@ -12,15 +20,14 @@ class DetailsMovieCard extends Component {
       button1,
       button2,
       director,
-      genre_ids,
       release_date,
       status,
+      video,
       vote_average,
       name,
       id,
       key,
     } = this.props;
-
 
     return (
       <div>
@@ -44,34 +51,37 @@ class DetailsMovieCard extends Component {
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
-                <h5 className="pb-4 blush">
-                  Genre:
+                <p className="pb-4 pt-4 blush">
+                  Genres :
                   {' '}
-                  <span className="my-genre">{name}</span>
-                  <span className="my-genre">{name}</span>
-                  <span className="my-genre">{name}</span>
-                </h5>
+                  {this.props.genres.map((genre) => (
+                    <span className="my-genre p-2 white">{genre.name}</span>
+                  ))}
+                </p>
                 <p className="blush">
-                  Directed by:
+                  Directed by :
                   {' '}
                   <span className="font-weight-bold white">{this.props.directing.name}</span>
                 </p>
                 <p className="blush">
-                  Status:
+                  Status :
                   {' '}
                   <span className="font-weight-bold white">{status}</span>
                 </p>
-                <p className="card-text">
-                  <small className="blush">
-                    Release date: 
-                    <span className="white">{release_date}</span>
-                  </small>
+
+                <p className="card-text blush">
+
+                  Release date :
+                  {' '}
+                  <span className="font-weight-bold white">{release_date}</span>
                 </p>
-                <p className="card-text pb-2 my-overview white">{overview}</p>
-                <h4 className="my-3 mt-auto blush">
-                Vote:
-                  {vote_average}
-                </h4>
+                <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
+                <p className="my-3 mt-auto blush">
+                  Vote:
+                  {' '}
+                  <span className="font-weight-bold white">{vote_average}</span>
+
+                </p>
                 <a href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
                 </a>
