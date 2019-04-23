@@ -2,9 +2,16 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import trailers from './trailers.json';
 
 class DetailsMovieCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      vote: '',
+    };
+  }
+
+
   render() {
     const {
       poster_path,
@@ -13,17 +20,14 @@ class DetailsMovieCard extends Component {
       button1,
       button2,
       director,
-      genre_ids,
       release_date,
       status,
       video,
-      trailer,
       vote_average,
       name,
       id,
       key,
     } = this.props;
-
 
     return (
       <div>
@@ -43,45 +47,41 @@ class DetailsMovieCard extends Component {
                 className="card-img my-card-img"
                 alt=""
               />
-              <a href={`https://www.youtube.com/watch?v=${video}`} target="_blank">
-                <img
-                  src="https://cdn1.iconfinder.com/data/icons/social-media-glossy/512/7-player_windows_media_player_video_social-512.png"
-                  className="my-video-player"
-                  alt="Click to view the trailer"
-                  title="Click to view the trailer"
-                />
-              </a>
+
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
-                <h5 className="pb-4 blush">
-                  Genre:
+                <p className="pb-4 pt-4 blush">
+                  Genres :
                   {' '}
-                  <span className="my-genre">{name}</span>
-                  <span className="my-genre">{name}</span>
-                  <span className="my-genre">{name}</span>
-                </h5>
-                <p className="blush">
-                  Directed by:
-                  {' '}
-                  <span className="font-weight-bold white">{director}</span>
+                  {this.props.genres.map((genre) => (
+                    <span className="my-genre p-2 white">{genre.name}</span>
+                  ))}
                 </p>
                 <p className="blush">
-                  Status:
+                  Directed by :
+                  {' '}
+                  <span className="font-weight-bold white">{this.props.directing.name}</span>
+                </p>
+                <p className="blush">
+                  Status :
                   {' '}
                   <span className="font-weight-bold white">{status}</span>
                 </p>
-                <p className="card-text">
-                  <small className="blush">
-                    Release date: 
-                    {release_date}
-                  </small>
+
+                <p className="card-text blush">
+
+                  Release date :
+                  {' '}
+                  <span className="font-weight-bold white">{release_date}</span>
                 </p>
-                <p className="card-text pb-2 my-overview white">{overview}</p>
-                <h4 className="my-3 mt-auto blush">
-                Vote:
-                  {vote_average}
-                </h4>
+                <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
+                <p className="my-3 mt-auto blush">
+                  Vote:
+                  {' '}
+                  <span className="font-weight-bold white">{vote_average}</span>
+
+                </p>
                 <a href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
                 </a>

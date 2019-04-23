@@ -8,7 +8,7 @@
   display: flex;
   list-style-type: none;
   margin:  auto;
-  font-size: 35px;
+  font-size: 30px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
@@ -31,25 +31,37 @@
 
 h2{
   margin-top: 70px;
-  color: #B7855F;
-  font-size: 55px;
-  font-family: 'Fascinate Inline', cursive;
+  color: white;
+  font-size: 60px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .cardimage, .posterfolio, .trendscol {
   border-radius: 15px;
 }
 
+.randommoviecard {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-color: transparent;
+  background-color: transparent;
+  height: 600px;
+  width: 300px;
+}
 /* DetailPage */
 
 .castingcard, .castinggroup, .detailcard{
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   margin-top: 40px;
   border-color: transparent;
   background-color: transparent;
   color: #B7855F;
 }
-
+.my-genre {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 25px;
+}
 .reviewcard {
   background-color: transparent;
   color: white;
@@ -58,8 +70,9 @@ h2{
   font-size: 21px;
 } 
 
+
 .my-review {
-  max-height: 197px;
+  max-height: 250px;
 overflow: auto;
 }
 
@@ -75,6 +88,9 @@ overflow: auto;
 .castingcharacter {
   color: white;
 }
+.castingcontainer {
+  margin-bottom: 150px;
+}
 
 .moviecard, .actorcard {
   margin-bottom: 40px;
@@ -83,7 +99,7 @@ overflow: auto;
   background-color: transparent;
   }
 
-.actorname, .my-card-body {
+.actorname, .my-card-body, .randommoviename{
   color: #B7855F;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 25px;
@@ -103,7 +119,9 @@ overflow: auto;
 .detailcontainer {
   margin-bottom: 50px;
 }
-
+.videoplayer {
+margin-top: 100px;
+}
 /* Footer */
 
 .footercontainer {
