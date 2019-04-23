@@ -2,18 +2,22 @@ import React from 'react';
 import DisplayedMessage from './DisplayedMessage';
 
 class AddComment extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       messages: [
         {
           name: '',
           email: '',
-          comment: ''
+          comment: '',
+          id: ''
         }
       ]
     };
+
+    this.add = this.add.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
@@ -29,7 +33,7 @@ class AddComment extends React.Component {
     const newEmail = this.refs.emailRef.value;
     const newComment = this.refs.commentRef.value;
 
-    if (localStorage.getItem('messages') == null) {
+    if (localStorage.getItem('messages') === null) {
       const messages = [];
       messages.push({ name: newName, email: newEmail, comment: newComment });
       localStorage.setItem('messages', JSON.stringify(messages));
@@ -47,10 +51,10 @@ class AddComment extends React.Component {
     this.refs.commentRef.value = '';
   }
 
-  delete(e) {
-    const index = e.target.getAttribute('data-key');
+  delete(event) {
+    const id = event.target.getAttribute('key');
     const list = JSON.parse(localStorage.getItem('messages'));
-    list.splice(index, 1);
+    list.splice(id, 1);
     this.setState({
       messages: list
     });
@@ -88,23 +92,16 @@ class AddComment extends React.Component {
               <input
                 type="button"
                 value="Submit"
-                onClick={this.add.bind(this)}
+                onClick={this.add}
                 className="btn btn-info my-white-font my-3"
               />
               <ul>
                 {this.state.messages.map(
-                  (message, index) => (
-                    <li key={index}>
-                      <DisplayedMessage {...message} />
-                      <input
-                        type="button"
-                        value="X"
-                        onClick={this.delete.bind(this)}
-                        data-key={index}
-                      />
+                  (message) => (
+                    <li>
+                      <DisplayedMessage {...message} delete={this.delete} />
                     </li>
-                  ),
-                  this
+                  )
                 )}
               </ul>
             </div>
