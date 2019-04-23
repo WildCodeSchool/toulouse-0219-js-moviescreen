@@ -6,8 +6,7 @@ import genres from '../genres.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
-import CommentForm from './details/CommentForm';
-import DisplayComment from './details/DisplayComment';
+import AddComment from './details/AddComment';
 import './details/DetailsMovieCard.css';
 
 class MovieDetails extends Component {
@@ -69,7 +68,7 @@ class MovieDetails extends Component {
           <DetailsMovieCard {...this.state.movie} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting}/>
-          <DisplayComment />
+          <AddComment />
         </div>
       </div>
     );
