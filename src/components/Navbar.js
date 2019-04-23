@@ -76,7 +76,7 @@ export default class Navbar extends React.Component {
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink className="blush" href=""><span className="blush">Watch Later</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/watch-later"><span className="blush">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} className="blush" to="/favorites"><span className="blush">Favorites</span></NavLink>
