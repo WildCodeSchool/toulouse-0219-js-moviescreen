@@ -34,8 +34,7 @@ class AddComment extends React.Component {
         messages: oldMessages,
       });
     }
-  }
-  
+  } 
 
   add(event) {
     event.preventDefault();
@@ -49,6 +48,7 @@ class AddComment extends React.Component {
     if (localStorage.getItem('messages') === null) {
       messages = [];
     } else {
+      // I used the [...this.state.messages] to create a copy of the messages array that I get from the state
       messages = [...this.state.messages];
     }
 
