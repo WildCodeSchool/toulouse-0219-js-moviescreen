@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 import DisplayedMessage from './DisplayedMessage';
 
 class AddComment extends React.Component {
@@ -11,7 +12,7 @@ class AddComment extends React.Component {
           name: '',
           email: '',
           comment: '',
-          id: ''
+          isNew: false
         }
       ]
     };
@@ -20,26 +21,48 @@ class AddComment extends React.Component {
     this.delete = this.delete.bind(this);
   }
 
+  // componentDidMount() {
+  //   const oldMessages = JSON.parse(localStorage.getItem('messages'));
+  //   if (oldMessages !== null) {
+  //     // eslint-disable-next-line no-return-assign
+  //     oldMessages.map((item) => (
+  //       item.isNew = false
+  //     ));
+  //   }
+
+  //   if (localStorage.getItem('messages') !== null) {
+  //     this.setState({
+  //       messages: oldMessages,
+  //     });
+  //   }
+  // }
+
   componentDidMount() {
     if (localStorage.getItem('messages') !== null) {
       this.setState({
-        messages: JSON.parse(localStorage.getItem('messages')),
+        messages: JSON.parse(localStorage.getItem('messages'))
       });
     }
   }
 
-  add() {
+  add(event) {
+    event.preventDefault();
+
     const newName = this.refs.nameRef.value;
     const newEmail = this.refs.emailRef.value;
     const newComment = this.refs.commentRef.value;
 
     if (localStorage.getItem('messages') === null) {
       const messages = [];
-      messages.push({ name: newName, email: newEmail, comment: newComment });
+      messages.push({
+        name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
+      });
       localStorage.setItem('messages', JSON.stringify(messages));
     } else {
       const messages = JSON.parse(localStorage.getItem('messages'));
-      messages.push({ name: newName, email: newEmail, comment: newComment });
+      messages.push({
+        name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
+      });
       localStorage.setItem('messages', JSON.stringify(messages));
     }
     this.setState({
@@ -52,13 +75,15 @@ class AddComment extends React.Component {
   }
 
   delete(event) {
-    const id = event.target.getAttribute('key');
+    const id = event.target.getAttribute('id');
     const list = JSON.parse(localStorage.getItem('messages'));
-    list.splice(id, 1);
+    const newList = list.filter((item) => (
+      item.id !== id
+    ));
     this.setState({
-      messages: list
+      messages: newList
     });
-    localStorage.setItem('messages', JSON.stringify(list));
+    localStorage.setItem('messages', JSON.stringify(newList));
   }
 
   render() {
@@ -70,31 +95,35 @@ class AddComment extends React.Component {
               <h2 className="mb-5">Comments</h2>
 
               <h5 className="my-white-font">Your name</h5>
-              <input
-                type="text"
-                placeholder="enter your name"
-                className="form-control my-3"
-                ref="nameRef"
-              />
-              <h5 className="my-white-font">Your email</h5>
-              <input
-                type="email"
-                placeholder="enter your email"
-                className="form-control my-3"
-                ref="emailRef"
-              />
-              <h5 className="my-white-font">Your message</h5>
-              <textarea
-                className="form-control my-3"
-                placeholder="enter your message"
-                ref="commentRef"
-              />
-              <input
-                type="button"
-                value="Submit"
-                onClick={this.add}
-                className="btn btn-info my-white-font my-3"
-              />
+              <form onSubmit={this.add}>
+                <input
+                  type="text"
+                  placeholder="enter your name"
+                  className="form-control my-3"
+                  ref="nameRef"
+                  required
+                />
+                <h5 className="my-white-font">Your email</h5>
+                <input
+                  type="email"
+                  placeholder="enter your email"
+                  className="form-control my-3"
+                  ref="emailRef"
+                  required
+                />
+                <h5 className="my-white-font">Your message</h5>
+                <textarea
+                  className="form-control my-3"
+                  placeholder="enter your message"
+                  ref="commentRef"
+                  required
+                />
+                <input
+                  type="submit"
+                  value="Submit"
+                  className="btn btn-info my-white-font my-3"
+                />
+              </form>
               <ul>
                 {this.state.messages.map(
                   (message) => (
