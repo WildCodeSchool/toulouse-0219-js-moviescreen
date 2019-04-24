@@ -11,8 +11,7 @@ class AddComment extends React.Component {
         {
           name: '',
           email: '',
-          comment: '',
-          isNew: false
+          comment: ''
         }
       ]
     };
@@ -21,29 +20,22 @@ class AddComment extends React.Component {
     this.delete = this.delete.bind(this);
   }
 
-  // componentDidMount() {
-  //   const oldMessages = JSON.parse(localStorage.getItem('messages'));
-  //   if (oldMessages !== null) {
-  //     // eslint-disable-next-line no-return-assign
-  //     oldMessages.map((item) => (
-  //       item.isNew = false
-  //     ));
-  //   }
-
-  //   if (localStorage.getItem('messages') !== null) {
-  //     this.setState({
-  //       messages: oldMessages,
-  //     });
-  //   }
-  // }
-
   componentDidMount() {
+    const oldMessages = JSON.parse(localStorage.getItem('messages'));
+    if (oldMessages !== null) {
+      // eslint-disable-next-line no-return-assign
+      oldMessages.map((item) => (
+        item.isNew = false
+      ));
+    }
+
     if (localStorage.getItem('messages') !== null) {
       this.setState({
-        messages: JSON.parse(localStorage.getItem('messages'))
+        messages: oldMessages,
       });
     }
   }
+  
 
   add(event) {
     event.preventDefault();
@@ -52,21 +44,21 @@ class AddComment extends React.Component {
     const newEmail = this.refs.emailRef.value;
     const newComment = this.refs.commentRef.value;
 
+    let messages
+
     if (localStorage.getItem('messages') === null) {
-      const messages = [];
-      messages.push({
-        name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
-      });
-      localStorage.setItem('messages', JSON.stringify(messages));
+      messages = [];
     } else {
-      const messages = JSON.parse(localStorage.getItem('messages'));
-      messages.push({
-        name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
-      });
-      localStorage.setItem('messages', JSON.stringify(messages));
+      messages = [...this.state.messages];
     }
+
+    messages.push({
+      name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
+    });
+    localStorage.setItem('messages', JSON.stringify(messages));
+
     this.setState({
-      messages: JSON.parse(localStorage.getItem('messages'))
+      messages: messages
     });
 
     this.refs.nameRef.value = '';
