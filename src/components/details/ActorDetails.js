@@ -12,6 +12,16 @@ class ActorDetails extends Component {
       profile_path,
     } = this.props;
 
+    if (!name || !birthday || !place_of_birth || !biography || !profile_path) {
+      return (
+        <div>
+          <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
+          <ModalBody className="m-2" onClick={this.handleClick}>
+            <div>No information available</div>
+          </ModalBody>
+        </div>
+      );
+    }
     return (
       <div>
         <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
