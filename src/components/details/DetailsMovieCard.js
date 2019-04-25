@@ -2,12 +2,14 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import StarRatingComponent from "react-star-rating-component";
 
 class DetailsMovieCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       vote: '',
+      rating: 1
     };
   }
 
@@ -28,7 +30,7 @@ class DetailsMovieCard extends Component {
       id,
       key,
     } = this.props;
-
+    const { rating } = this.state;
     return (
       <div>
         <div className="container detailcontainer">
@@ -80,13 +82,16 @@ class DetailsMovieCard extends Component {
                   Vote:
                   {' '}
                   <span className="font-weight-bold white">{vote_average}</span>
-
+                  <div>
+                    <StarRatingComponent
+                      name="rate2"
+                      editing={false}
+                      renderStarIcon={() => <span>&#9733;</span>}
+                      starCount={10}
+                      value={vote_average}
+                    />
+                  </div>
                 </p>
-                <p className="card-text pb-2 my-overview white">{overview}</p>
-                <h4 className="my-3 mt-auto blush">
-                Vote:
-                  {vote_average}
-                </h4>
                 <a href={button1} className="btn btn-info my-btn btn-block">
                   Add to my favorits
                 </a>
