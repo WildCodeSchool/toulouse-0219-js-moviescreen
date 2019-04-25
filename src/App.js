@@ -9,6 +9,7 @@ import Search from './components/Search';
 import RandomPage from './components/RandomPage';
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
+import ResultGenre from './components/ResultGenre';
 import './App.css';
 
 
@@ -42,10 +43,11 @@ class App extends Component {
         </header>
 
         <Route path="/" exact component={Homepage} />
-        <Route path="/movie-details/:id" exact component={MovieDetails} />
+        <Route path="/movie-details/:id" component={MovieDetails} />
+        <Route path="/genre/:genre" exact component={ResultGenre}/>
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites}/>} />
         <Route path="/search" component={Search} />
-        <Route path="/i-feel-lucky" exact component={RandomPage}></Route>
+        <Route path="/i-feel-lucky" component={RandomPage}></Route>
     <footer className="foot">
           <Footer />
         </footer>

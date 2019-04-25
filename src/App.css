@@ -10,6 +10,21 @@
   margin:  auto;
   font-size: 28px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: transparent;
+}
+
+.droplink {
+  font-size: 20px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+}
+
+.droplink:hover {
+  text-decoration: none;
+}
+
+.categoriesbutton {
+background-color: transparent;
 }
 
 .homebutton {
