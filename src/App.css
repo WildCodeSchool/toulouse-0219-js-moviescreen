@@ -83,6 +83,7 @@ overflow: auto;
 .castingcard {
   margin-right: 5px;
   margin-left: 5px;
+  max-width: 200px;
 }
 
 .castingbody {

@@ -47,7 +47,7 @@ class Casting extends React.Component {
             </div>
           </div>
         <div className="card m-4 castinggroup">
-          <CardGroup>
+          <CardGroup className="mx-auto">
             {this.props.casting.map(({
               profile_path, name, character, id
             }) => (
