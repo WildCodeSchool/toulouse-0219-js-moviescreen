@@ -13,11 +13,10 @@ class Player extends React.Component {
       }
     };
 
-    const trailer = this.props.trailer.key;
+    const trailer = this.props.trailer;
     if (!trailer) {
-      return (<h3>Sorry, No Trailer</h3>)
+      return (<h4>Sorry, No Trailer Yet</h4>);
     }
-
     return (
       <YouTube
         className="videoplayer"
@@ -27,6 +26,7 @@ class Player extends React.Component {
       />
     );
   }
+
   _onReady(event) {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();

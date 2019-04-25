@@ -19,7 +19,6 @@ class DetailsMovieCard extends Component {
       overview,
       button1,
       button2,
-      director,
       release_date,
       status,
       video,
@@ -61,7 +60,8 @@ class DetailsMovieCard extends Component {
                 <p className="blush">
                   Directed by :
                   {' '}
-                  <span className="font-weight-bold white">{this.props.directing.name}</span>
+                  {!this.props.directing ? <span className="font-weight-bold white">Unknown</span> : 
+                  <span className="font-weight-bold white">{this.props.directing.name}</span> }
                 </p>
                 <p className="blush">
                   Status :

@@ -8,7 +8,7 @@
   display: flex;
   list-style-type: none;
   margin:  auto;
-  font-size: 30px;
+  font-size: 28px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
@@ -35,6 +35,15 @@ h2{
   font-size: 60px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+
+h3 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: white;
+  font-size: 40px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
 
 .cardimage, .posterfolio, .trendscol {
   border-radius: 15px;
@@ -122,6 +131,19 @@ overflow: auto;
 .videoplayer {
 margin-top: 100px;
 }
+
+/* Search */
+.searchbar {
+  border: none;
+  border-bottom: 2px solid var(--light-color);
+  background-color: transparent;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 /* Footer */
 
 .footercontainer {

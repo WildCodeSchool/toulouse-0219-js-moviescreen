@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { InputGroup, InputGroupAddon, Button, Input, Container, Row, Col } from 'reactstrap';
-import ResultMovie from './ResultMovie';
+import {
+ Form, FormGroup, Label, Input, Row, Col 
+} from 'reactstrap';
 import axios from 'axios';
+import ResultMovie from './ResultMovie';
 
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: '',
       results: []
     };
     this.getInfo = this.getInfo.bind(this);
@@ -17,11 +18,11 @@ class Search extends Component {
   getInfo(searchTerm) {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=6839ebece0568da454bfdb445830df32&language=en-US&query=${searchTerm}&page=1&include_adult=true`)
       .then(response => response.data)
-      .then(data => this.setState({ results: data.results.slice(0, 30) }));
+      .then(data => this.setState({ results: data.results.slice(0, 50) }));
   }
 
   searchChangeHandler(event) {
-    let searchTerm = event.target.value;
+    const searchTerm = event.target.value;
     this.getInfo(searchTerm);
   }
 
@@ -29,13 +30,17 @@ class Search extends Component {
     return (
       <div>
         <form onSubmit={this.submitForm}>
+          <h3>What Are You Looking For?</h3>
           <input
-            type="text"
+            className="searchbar"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
             id="title"
             name="title"
-            placeholder="search"
             onChange={this.searchChangeHandler}
           />
+
 
         </form>
         <div className="container">
