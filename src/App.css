@@ -160,3 +160,8 @@ margin-top: 100px;
   color: orange;
   background-color: pink;
 }
+
+.my-actor-profile-img {
+  width: 200px;
+  float: left;
+}

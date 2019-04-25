@@ -18,7 +18,7 @@ class ActorDetails extends Component {
         <ModalBody className="m-2" onClick={this.handleClick}>
           <img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${profile_path}`}
-            className="my-actor-profile-img mr-3 mb-4"
+            className="my-actor-profile-img mr-4 mb-4"
             alt=""
           />
           <p>

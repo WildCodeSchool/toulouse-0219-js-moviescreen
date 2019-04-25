@@ -9,7 +9,6 @@ import CastingCard from './details/Casting';
 import AddComment from './details/AddComment';
 import './details/DetailsMovieCard.css';
 import Player from './details/Youtubeplayer';
-import axios from 'axios';
 
 
 function empty() {

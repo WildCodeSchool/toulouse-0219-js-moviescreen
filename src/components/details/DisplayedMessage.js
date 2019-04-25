@@ -25,10 +25,10 @@ class DisplayedMessage extends Component {
               />
             ) : null}
             <h4 className="mt-2">{name}</h4>
-            <h6>{email}</h6>
+            <h6 className="text-secondary">{email}</h6>
           </div>
           <div>
-            <div className="card-body">
+            <div className="card-body text-dark">
               <div>{comment}</div>
             </div>
           </div>
