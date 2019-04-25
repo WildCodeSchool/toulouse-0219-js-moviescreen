@@ -4,12 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-slick": "^0.23.2",
+    "react-youtube": "^7.9.0",
     "reactstrap": "^7.1.0",
     "slick-carousel": "^1.8.1",
     "uuid": "^3.3.2"
@@ -43,5 +45,17 @@
   ],
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/toulouse-0219-js-wildscreen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/toulouse-0219-js-wildscreen/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/toulouse-0219-js-wildscreen#readme"
 }

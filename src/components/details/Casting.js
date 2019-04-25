@@ -40,14 +40,12 @@ class Casting extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="container">
+        <div className="container castingcontainer">
           <div className="row">
             <div className="col ml-4">
               <h2>Casting</h2>
             </div>
           </div>
-        </div>
         <div className="card m-4 castinggroup">
           <CardGroup>
             {this.props.casting.map(({
@@ -82,7 +80,7 @@ class Casting extends React.Component {
             <ActorDetails {...this.state.actor} />
           </Modal>
         </div>
-      </div>
+        </div>
     );
   }
 }
