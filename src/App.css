@@ -96,6 +96,10 @@ h3 {
 }
 /* DetailPage */
 
+.my-btn {
+  color: #ffffff !important;
+}
+
 .castingcard, .castinggroup, .detailcard{
   margin-bottom: 70px;
   margin-top: 40px;
@@ -125,6 +129,7 @@ overflow: auto;
 .castingcard {
   margin-right: 5px;
   margin-left: 5px;
+  max-width: 200px;
 }
 
 .castingbody {
@@ -214,4 +219,9 @@ margin-top: 100px;
 .myNavEx {
   color: orange;
   background-color: pink;
+}
+
+.my-actor-profile-img {
+  width: 200px;
+  float: left;
 }

@@ -1,13 +1,14 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import axios from 'axios';
 import popular from '../popular-movies.json';
 import genres from '../genres.json';
 import DetailsMovieCard from './details/DetailsMovieCard';
 import Reviews from './details/Reviews';
 import CastingCard from './details/Casting';
+import AddComment from './details/AddComment';
 import './details/DetailsMovieCard.css';
 import Player from './details/Youtubeplayer';
-import axios from 'axios';
 
 
 function empty() {
@@ -98,6 +99,7 @@ class MovieDetails extends Component {
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>
           <Player trailer={this.state.trailer} />
+          <AddComment />
         </div>
       </div>
     );

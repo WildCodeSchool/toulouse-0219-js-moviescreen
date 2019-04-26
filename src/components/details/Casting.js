@@ -6,8 +6,9 @@ import {
   CardGroup,
   CardSubtitle,
   CardBody,
-  Modal,
+  Modal
 } from 'reactstrap';
+import axios from 'axios';
 import ActorDetails from './ActorDetails';
 
 class Casting extends React.Component {
@@ -20,7 +21,18 @@ class Casting extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  fetchData(id) {
+    const actorUrl = `https://api.themoviedb.org/3/person/${id}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`;
+    axios
+      .get(actorUrl)
+      .then(response => response.data)
+      .then(data => this.setState({
+        actor: data
+      }));
+  }
+
+  toggle(id) {
+    this.fetchData(id);
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -37,8 +49,10 @@ class Casting extends React.Component {
           <div className="col ml-4" />
         </div>
         <div className="card m-4 castinggroup">
-          <CardGroup>
-            {this.props.casting.map(({ profile_path, name, character }) => (
+          <CardGroup className="mx-auto">
+            {this.props.casting.map(({
+              profile_path, name, character, id
+            }) => (
               <Card className="castingcard">
                 {this.props.buttonLabel}
                 {!profile_path ? (
@@ -61,8 +75,12 @@ class Casting extends React.Component {
                   />
                 )}
                 <CardBody className="castingbody">
-                  <CardTitle className="h5 font-weight-bold castingbody">{name}</CardTitle>
-                  <CardSubtitle className="castingcharacter">{character}</CardSubtitle>
+                  <CardTitle className="h5 font-weight-bold castingbody">
+                    {name}
+                  </CardTitle>
+                  <CardSubtitle className="castingcharacter">
+                    {character}
+                  </CardSubtitle>
                 </CardBody>
               </Card>
             ))}
@@ -72,7 +90,7 @@ class Casting extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            {/* <ActorDetails {...actors} />  */}
+            <ActorDetails {...this.state.actor} />
           </Modal>
         </div>
       </div>
