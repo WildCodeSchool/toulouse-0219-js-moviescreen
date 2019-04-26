@@ -6,7 +6,7 @@ import {
 import { Row, Col } from 'reactstrap';
 
 
-const FavoriteList = ({ movies , ajoutFav }) => (
+const WatchLaterList = ({ movies , ajoutWatchLater }) => (
   <div className="container">
     <Row>
       <CardGroup className="color-cardd mt-4 mb-4">
@@ -21,9 +21,9 @@ const FavoriteList = ({ movies , ajoutFav }) => (
                 <CardTitle className="f-dis">{movie.original_title}</CardTitle>
                 <CardSubtitle className="f-diss">{movie.tagline}</CardSubtitle>
               </CardBody>
-              <button onClick={()=>ajoutFav(movie.id)} className="btn btn-dark my-btn btn-block">
-                  Delete to my favorits
-              </button>
+              <button onClick={()=>ajoutWatchLater(movie.id)} className="btn btn-dark my-btn btn-block">
+                  Delete to watch later
+                </button>
             </Card>
             
           </Col>
@@ -34,4 +34,4 @@ const FavoriteList = ({ movies , ajoutFav }) => (
   </div>
 );
 
-export default FavoriteList;
+export default WatchLaterList;
