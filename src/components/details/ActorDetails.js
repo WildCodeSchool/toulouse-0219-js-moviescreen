@@ -9,16 +9,26 @@ class ActorDetails extends Component {
       birthday,
       place_of_birth,
       biography,
-      profile_path
+      profile_path,
     } = this.props;
 
+    if (!name || !birthday || !place_of_birth || !biography || !profile_path) {
+      return (
+        <div>
+          <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
+          <ModalBody className="m-2" onClick={this.handleClick}>
+            <div>No information available</div>
+          </ModalBody>
+        </div>
+      );
+    }
     return (
       <div>
         <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
-        <ModalBody className="m-2">
+        <ModalBody className="m-2" onClick={this.handleClick}>
           <img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${profile_path}`}
-            className="my-actor-profile-img mr-3"
+            className="my-actor-profile-img mr-4 mb-4"
             alt=""
           />
           <p>
