@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Search from './components/Search';
 import WatchLater from './components/WatchLater'
 import RandomPage from './components/RandomPage';
 import MovieDetails from './components/MovieDetails';
@@ -52,8 +53,8 @@ class App extends Component {
         <header className="App-header">
           <Navbar />
         </header>
-
         <Route path="/" exact component={Homepage} />
+        <Route path="/search" component={Search} />
         <Route path="/movie-details/:id" exact render={(props) => <MovieDetails {...props} ajoutFav={this.ajoutFav} ajoutWatchLater={this.ajoutWatchLater} />} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites} ajoutFav={this.ajoutFav} />} />
         <Route path="/watch-later" render={(props) => <WatchLater {...props} watchL={this.state.watchL} ajoutWatchLater={this.ajoutWatchLater} />} />

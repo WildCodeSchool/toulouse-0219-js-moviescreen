@@ -79,19 +79,22 @@ export default class Navbar extends React.Component {
               <NavLink tag={Link} className="blush" to="/watch-later"><span className="blush">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link}  to="/favorites"><span className="white">Favorites</span></NavLink>
+              <NavLink tag={Link} to="/favorites"><span className="white">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} className="blush" to="/i-feel-lucky"><span className="blush">I feel lucky</span></NavLink>
+              <NavLink tag={Link} to="/search"><span className="white">Finder</span></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/i-feel-lucky"><span className="white">I feel lucky</span></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
         <NavItem className="medialogo nav-pills justify-content-end">
           <NavLink href="">
 
-            <i className="fab fa-facebook fa-1x blush mr-3" />
-            <i className="fab fa-instagram fa-1x blush mr-3" />
-            <i className="fab fa-twitter fa-1x blush mr-3" />
+            <i className="fab fa-facebook fa-1x white mr-3" />
+            <i className="fab fa-instagram fa-1x white mr-3" />
+            <i className="fab fa-twitter fa-1x white mr-3" />
 
           </NavLink>
         </NavItem>

@@ -39,11 +39,14 @@ class Casting extends React.Component {
   }
 
   render() {
+    const casting = this.props.casting;
+    if (!casting[0]) {
+      return (<h4>Sorry, No Cast Yet</h4>);
+    }
     return (
         <div className="container castingcontainer">
           <div className="row">
             <div className="col ml-4">
-              <h2>Casting</h2>
             </div>
           </div>
         <div className="card m-4 castinggroup">
