@@ -32,26 +32,34 @@ class Casting extends React.Component {
       return (<h4>Sorry, No Cast Yet</h4>);
     }
     return (
-        <div className="container castingcontainer">
-          <div className="row">
-            <div className="col ml-4">
-            </div>
-          </div>
+      <div className="container castingcontainer">
+        <div className="row">
+          <div className="col ml-4" />
+        </div>
         <div className="card m-4 castinggroup">
           <CardGroup>
             {this.props.casting.map(({ profile_path, name, character }) => (
               <Card className="castingcard">
                 {this.props.buttonLabel}
-                <CardImg
-                  className="castingimage"
-                  // DEVE ESSERE QUALCOSA COSI'
-                  // onClick={() => this.toggle(actor.id)}
-                  onClick={this.toggle}
-                  top
-                  width="100%"
-                  src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${profile_path}`}
-                  alt="Card image cap"
-                />
+                {!profile_path ? (
+                  <CardImg
+                    className="castingimage"
+                    onClick={this.toggle}
+                    top
+                    width="100%"
+                    src="https://via.placeholder.com/198x298?text=No+Picture"
+                    alt="actor image"
+                  />
+                ) : (
+                  <CardImg
+                    className="castingimage"
+                    onClick={this.toggle}
+                    top
+                    width="100%"
+                    src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${profile_path}`}
+                    alt="actor image"
+                  />
+                )}
                 <CardBody className="castingbody">
                   <CardTitle className="h5 font-weight-bold castingbody">{name}</CardTitle>
                   <CardSubtitle className="castingcharacter">{character}</CardSubtitle>
@@ -67,7 +75,7 @@ class Casting extends React.Component {
             {/* <ActorDetails {...actors} />  */}
           </Modal>
         </div>
-        </div>
+      </div>
     );
   }
 }

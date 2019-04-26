@@ -40,13 +40,21 @@ class DetailsMovieCard extends Component {
         <div className="detailcard card m-4">
           <div className="row no-gutters m-3">
             <div className="col-md-4 col-lg-6">
-              <img
-                src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster_path}`
-                }
-                className="card-img my-card-img"
-                alt=""
-              />
-
+              {!poster_path ? (
+                <img
+                  src={`https://via.placeholder.com/514x771?text=${original_title}`}
+                  className="card-img my-card-img"
+                  alt="Poster"
+                />
+              )
+                : (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster_path}`}
+                    className="card-img my-card-img"
+                    alt="Poster"
+                  />
+                )
+              }
             </div>
             <div className="col-md-8 col-lg-6 p-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
@@ -60,8 +68,8 @@ class DetailsMovieCard extends Component {
                 <p className="blush">
                   Directed by :
                   {' '}
-                  {!this.props.directing ? <span className="font-weight-bold white">Unknown</span> : 
-                  <span className="font-weight-bold white">{this.props.directing.name}</span> }
+                  {!this.props.directing ? <span className="font-weight-bold white">Unknown</span>
+                    : <span className="font-weight-bold white">{this.props.directing.name}</span>}
                 </p>
                 <p className="blush">
                   Status :

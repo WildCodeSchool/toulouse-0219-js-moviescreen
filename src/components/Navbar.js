@@ -41,48 +41,48 @@ export default class Navbar extends React.Component {
                 <span className="white">Categories</span>
               </DropdownToggle>
               <DropdownMenu right>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/28">
+                <Link tag={Link} className="droplink" to="/genre/28">
                   <DropdownItem>
                     Action
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/35">
+                <Link tag={Link} className="droplink" to="/genre/35">
                   <DropdownItem>
                     Comedy
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/878">
+                <Link tag={Link} className="droplink" to="/genre/878">
                   <DropdownItem>
                     Science fiction
                   </DropdownItem>
                 </Link>
                 <DropdownItem />
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/14">
+                <Link tag={Link} className="droplink" to="/genre/14">
                   <DropdownItem>
                     Fantasy
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/53">
+                <Link tag={Link} className="droplink" to="/genre/53">
                   <DropdownItem>
                     Thriller
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/27">
+                <Link tag={Link} className="droplink" to="/genre/27">
                   <DropdownItem>
                     Horror
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/16">
+                <Link tag={Link} className="droplink" to="/genre/16">
                   <DropdownItem>
                     Animation
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/99">
+                <Link tag={Link} className="droplink" to="/genre/99">
                   <DropdownItem>
                     Documentary
                   </DropdownItem>
                 </Link>
-                <Link tag={Link} className="droplink" onClick={this.forceUpdate} to="/genre/10749">
+                <Link tag={Link} className="droplink" to="/genre/10749">
                   <DropdownItem>
                     Romance
                   </DropdownItem>

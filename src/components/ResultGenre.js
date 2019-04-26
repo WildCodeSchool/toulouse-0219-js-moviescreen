@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import GenreCard from './GenreCard';
 
@@ -8,13 +7,19 @@ class ResultGenre extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: []
+      results: [],
     };
     this.getInfo = this.getInfo.bind(this);
   }
 
   componentDidMount() {
     this.getInfo();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.genre !== this.props.match.params.genre) {
+      this.getInfo();
+    }
   }
 
   getInfo() {

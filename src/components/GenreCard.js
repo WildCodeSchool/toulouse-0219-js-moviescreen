@@ -7,7 +7,10 @@ class GenreCard extends React.Component {
     return (
       <Link to={`/movie-details/${this.props.id}`}>
         <Card key={this.props.id} className="moviecard">
-          <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${this.props.poster_path}`} alt={this.props.title} />
+          {!this.props.poster_path ?
+            <CardImg className="cardimage" top width="100%" src={`https://via.placeholder.com/249x373?text=${this.props.title}`} alt={this.props.title} />
+            : <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${this.props.poster_path}`} alt={this.props.title} />
+          }
         </Card>
       </Link>
     )
