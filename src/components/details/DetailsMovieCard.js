@@ -78,6 +78,10 @@ class DetailsMovieCard extends Component {
                   <span className="font-weight-bold white">{release_date}</span>
                 </p>
                 <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
+                <h4 className="my-3 mt-auto blush">
+                Vote:
+                  {vote_average}
+                </h4>
                 <p className="my-3 mt-auto blush">
                   Vote:
                   {' '}
@@ -92,12 +96,12 @@ class DetailsMovieCard extends Component {
                     />
                   </div>
                 </p>
-                <a href={button1} className="btn btn-info my-btn btn-block">
+                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn btn-primary my-btn btn-block">
                   Add to my favorits
-                </a>
-                <a href={button2} className="btn btn-info my-btn btn-block">
+                </button>
+                <button onClick={()=>this.props.ajoutWatchLater(id)} href={button2} className="btn btn-primary my-btn btn-block">
                   Add to watch later
-                </a>
+                </button>
               </div>
             </div>
           </div>

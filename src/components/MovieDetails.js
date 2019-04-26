@@ -92,7 +92,9 @@ class MovieDetails extends Component {
     return (
       <div className="row">
         <div className="container">
-          <DetailsMovieCard {...this.state.movie} genres={this.state.genres} directing={this.state.directing} />
+
+         
+          <DetailsMovieCard {...this.state.movie} ajoutFav={this.props.ajoutFav} ajoutWatchLater={this.props.ajoutWatchLater} genres={this.state.genres} directing={this.state.directing} />
           <Reviews reviews={this.state.reviews} />
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>
