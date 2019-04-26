@@ -10,6 +10,7 @@ import WatchLater from './components/WatchLater'
 import RandomPage from './components/RandomPage';
 import MovieDetails from './components/MovieDetails';
 import Homepage from './components/Homepage';
+import ResultGenre from './components/ResultGenre';
 import './App.css';
 
 
@@ -54,6 +55,7 @@ class App extends Component {
           <Navbar />
         </header>
         <Route path="/" exact component={Homepage} />
+        <Route path="/genre/:genre" exact component={ResultGenre}/>
         <Route path="/search" component={Search} />
         <Route path="/movie-details/:id" exact render={(props) => <MovieDetails {...props} ajoutFav={this.ajoutFav} ajoutWatchLater={this.ajoutWatchLater} />} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites} ajoutFav={this.ajoutFav} />} />

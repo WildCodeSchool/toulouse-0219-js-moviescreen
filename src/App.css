@@ -4,12 +4,49 @@
   color: #B7855F;
 }
 
+/* Navbar */
+
 .nav-pills {
   display: flex;
   list-style-type: none;
   margin:  auto;
   font-size: 28px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: transparent;
+}
+
+.navbar-nav > li > .dropdown-menu { 
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dropdown-toggle[aria-expanded="true"] {
+  background: transparent !important;
+  color: #B7855F !important;
+}
+
+.dropdown-toggle:hover {
+  color:#B7855F;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  background-color: #000C0B !important;
+  color: white;
+  opacity: 0.8;
+}
+
+.droplink {
+  font-size: 23px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+}
+
+.droplink:hover {
+  text-decoration: none;
+}
+
+.categoriesbutton {
+background-color: transparent;
 }
 
 .homebutton {
@@ -46,7 +83,7 @@ h3 {
 
 
 .cardimage, .posterfolio, .trendscol {
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 .randommoviecard {
