@@ -59,4 +59,5 @@ class ActorCards extends React.Component {
     );
   }
 }
+
 export default ActorCards;

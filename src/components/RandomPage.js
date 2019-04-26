@@ -23,7 +23,7 @@ class MovieGenerator extends React.Component {
 
   newMovie() {
     let pagesize = info.results.length;
-    let filesize = 358;
+    let filesize = 356;
     console.log(info.total_pages);
     let pageNumber = (Math.floor(Math.random() * filesize));
     let movieNumber = (Math.floor(Math.random() * pagesize));
@@ -32,12 +32,11 @@ class MovieGenerator extends React.Component {
       .then(data => this.setState({ title: data.results[movieNumber].title, poster_path: data.results[movieNumber].poster_path, id: data.results[movieNumber].id }));
   }
 
-
   render() {
     return (
       <div id="quote-box" className="">
         <Buttons handlenewMovie={this.newMovie} movieName={this.state.title} moviePoster={this.state.poster_path} movieId={this.state.id} />
-        <h2>You must Watch: </h2>
+        <h3>You must Watch: </h3>
         <Text movieName={this.state.title} moviePoster={this.state.poster_path} movieId={this.state.id} />
       </div>
     )

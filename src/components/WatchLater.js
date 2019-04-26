@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import movies from '../popular-movies';
-import FavoriteList from './FavoriteList';
+import WatchLaterList from './WatchLaterList';
 
 
-class Favorite extends React.Component {
+class WatchLater extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class Favorite extends React.Component {
 
 
   getMovies() {
-    const arr = this.props.favorites;
+    const arr = this.props.watchL;
     const requests = arr.map(favorite => axios.get(`https://api.themoviedb.org/3/movie/${favorite}?api_key=6839ebece0568da454bfdb445830df32&language=en-US`)
       .then(response => response.data));
     Promise.all(requests)
@@ -41,11 +41,11 @@ class Favorite extends React.Component {
     //   ))
       <div>
 
-        <FavoriteList ajoutFav={this.props.ajoutFav} movies={this.state.movies.filter(movie =>  this.props.favorites.includes(movie.id))} />
+        <WatchLaterList ajoutWatchLater={this.props.ajoutWatchLater} movies={this.state.movies.filter(movie =>  this.props.watchL.includes(movie.id))} />
       </div>
 
     );
   }
 }
 
-export default Favorite;
+export default WatchLater ;

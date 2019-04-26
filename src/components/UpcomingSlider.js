@@ -34,12 +34,12 @@ export default class UpcomingSlider extends Component {
 
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 1500,
       slidesToShow: 4,
       slidesToScroll: 4,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 6000,
       arrows: true,
       pauseOnHover: false,

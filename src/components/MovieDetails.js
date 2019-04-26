@@ -18,7 +18,6 @@ function empty() {
   return <Reviews reviews={this.state.reviews} />;
 }
 
-
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +70,7 @@ class MovieDetails extends Component {
       .then(response => response.data)
       .then(data => this.setState({
         casting: data.cast.slice(0, 5),
-        directing: data.crew.find(person => person.job === 'Director')
+        directing: data.crew.find(person => person.job === 'Director') 
       }));
   }
 
@@ -81,7 +80,7 @@ class MovieDetails extends Component {
     axios.get(trailerurl)
       .then(response => response.data)
       .then(data => this.setState({
-        trailer: data.results.find(video => video.type === 'Trailer')
+        trailer: data.results.find(video => video.type === 'Trailer' || 'Clip' || 'Teaser')
       }));
   }
 
@@ -89,11 +88,14 @@ class MovieDetails extends Component {
     const movieGenres = genres.genres.filter(
       genre => popular.results[0].genre_ids.includes(genre.id)
     );
+
     return (
       <div className="row">
         <div className="container">
-          <DetailsMovieCard {...this.state.movie} genres={this.state.genres} directing={this.state.directing} />
+          <DetailsMovieCard {...this.state.movie} ajoutFav={this.props.ajoutFav} ajoutWatchLater={this.props.ajoutWatchLater} genres={this.state.genres} directing={this.state.directing} />
+          <h2>Reviews</h2>
           <Reviews reviews={this.state.reviews} />
+          <h2>Casting</h2>
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>
           <Player trailer={this.state.trailer} />
