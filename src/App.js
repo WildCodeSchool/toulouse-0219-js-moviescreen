@@ -54,7 +54,6 @@ class App extends Component {
         <header className="App-header">
           <Navbar />
         </header>
-
         <Route path="/" exact component={Homepage} />
         <Route path="/genre/:genre" exact component={ResultGenre}/>
         <Route path="/search" component={Search} />

@@ -45,9 +45,6 @@ class Casting extends React.Component {
     }
     return (
       <div className="container castingcontainer">
-        <div className="row">
-          <div className="col ml-4" />
-        </div>
         <div className="card m-4 castinggroup">
           <CardGroup className="mx-auto">
             {this.props.casting.map(({
