@@ -58,6 +58,16 @@ background-color: transparent;
   padding-bottom: 120px;
 }
 
+.font{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+.buttonfont {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+  border-color: #B7855F;
+}
+
 .white {
   color: white;
 }
@@ -174,6 +184,7 @@ overflow: auto;
 margin-top: 100px;
 }
 
+
 /* Search */
 .searchbar {
   border: none;
@@ -190,7 +201,7 @@ margin-top: 100px;
 
 .footercontainer {
   padding-bottom: 30px;
-  padding-top: 200px;
+  padding-top: 300px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .footerquote {
