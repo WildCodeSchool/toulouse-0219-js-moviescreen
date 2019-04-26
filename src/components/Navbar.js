@@ -90,10 +90,10 @@ export default class Navbar extends React.Component {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href=""><span className="white">Watch Later</span></NavLink>
+              <NavLink tag={Link} to="/favorites"><span className="white">Favorites</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/favorites"><span className="white">Favorites</span></NavLink>
+              <NavLink tag={Link} className="blush" to="/watch-later"><span className="blush">Watch Later</span></NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to="/search"><span className="white">Finder</span></NavLink>
