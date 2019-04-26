@@ -22,6 +22,7 @@ class AddComment extends React.Component {
 
   componentDidMount() {
     const oldMessages = JSON.parse(localStorage.getItem('messages'));
+
     if (oldMessages !== null) {
       // eslint-disable-next-line no-return-assign
       oldMessages.map((item) => (
@@ -53,7 +54,7 @@ class AddComment extends React.Component {
     }
 
     messages.push({
-      name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true
+      name: newName, email: newEmail, comment: newComment, id: uuid.v4(), isNew: true, movieId: this.props.movieId
     });
     localStorage.setItem('messages', JSON.stringify(messages));
 
@@ -117,10 +118,11 @@ class AddComment extends React.Component {
                 />
               </form>
               <ul>
-                {this.state.messages.map(
+                {this.state.messages.filter((item) => item.movieId === Number(this.props.movieId))
+                .map(
                   (message) => (
                     <li>
-                      <DisplayedMessage {...message} delete={this.delete} />
+                      <DisplayedMessage {...message} delete={this.delete}  />
                     </li>
                   )
                 )}

@@ -8,7 +8,8 @@ class DisplayedMessage extends Component {
       email,
       comment,
       id,
-      isNew
+      isNew,
+      movieId
     } = this.props;
 
     if (name) {
