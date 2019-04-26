@@ -23,11 +23,8 @@ class DetailsMovieCard extends Component {
       button2,
       release_date,
       status,
-      video,
       vote_average,
-      name,
       id,
-      key,
     } = this.props;
     const { rating } = this.state;
     return (
@@ -86,10 +83,6 @@ class DetailsMovieCard extends Component {
                   <span className="font-weight-bold white">{release_date}</span>
                 </p>
                 <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
-                <h4 className="my-3 mt-auto blush">
-                Vote:
-                  {vote_average}
-                </h4>
                 <p className="my-3 mt-auto blush">
                   Vote:
                   {' '}
@@ -104,11 +97,11 @@ class DetailsMovieCard extends Component {
                     />
                   </div>
                 </p>
-                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn btn-primary my-btn btn-block">
-                  Add to my favorits
+                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn mt-2 buttonfont my-btn btn-block">
+                  <span className="white">Add To My Favorites</span>
                 </button>
-                <button onClick={()=>this.props.ajoutWatchLater(id)} href={button2} className="btn btn-primary my-btn btn-block">
-                  Add to watch later
+                <button onClick={()=>this.props.ajoutWatchLater(id)} href={button2} className="btn buttonfont my-btn btn-block">
+                  <span className="white">Add To watch Later</span>
                 </button>
               </div>
             </div>
