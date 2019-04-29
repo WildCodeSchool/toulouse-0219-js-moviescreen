@@ -1,35 +1,29 @@
 import React from 'react';
 import {
-  Card, CardImg, CardBody,
-  CardTitle, CardSubtitle, CardGroup
+ Card, CardImg, Row, Col 
 } from 'reactstrap';
-import { Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-
-const WatchLaterList = ({ movies , ajoutWatchLater }) => (
+const WatchLaterList = ({ movies, ajoutWatchLater }) => (
   <div className="container">
+  <h3>Your Movies to Watch Later</h3>
     <Row>
-      <CardGroup className="color-cardd mt-4 mb-4">
-        {
-      movies.map(
-        movie => (
-          <Col lg="3" md="4" sm="6" xs="6">
-
-            <Card className="mb-3 mt-3" className="card-essai">
-              <CardImg width="100px" top src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`} alt="Card image cap" />
-              <CardBody>
-                <CardTitle className="f-dis">{movie.original_title}</CardTitle>
-                <CardSubtitle className="f-diss">{movie.tagline}</CardSubtitle>
-              </CardBody>
-              <button onClick={()=>ajoutWatchLater(movie.id)} className="btn btn-dark my-btn btn-block">
-                  Delete to watch later
-                </button>
-            </Card>
-            
-          </Col>
+      {
+        movies.map(
+          movie => (
+            <Col lg="3" md="4" sm="6" xs="6">
+              <Card className="mb-3 mt-3" className="card-essai mb-5">
+                <Link to={`/movie-details/${movie.id}`}>
+                  <CardImg width="100px" top src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`} alt="Card image cap" />
+                </Link>
+                <a onClick={() => ajoutWatchLater(movie.id)} className="btn my-btn btn-block font">
+                  Delete To Watch Later
+                </a>
+              </Card>
+            </Col>
+          )
         )
-      )}
-      </CardGroup>
+      }
     </Row>
   </div>
 );

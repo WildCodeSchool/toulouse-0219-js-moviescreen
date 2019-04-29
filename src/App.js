@@ -55,17 +55,16 @@ class App extends Component {
           <Navbar />
         </header>
         <Route path="/" exact component={Homepage} />
-        <Route path="/genre/:genre" exact component={ResultGenre}/>
+        <Route path="/genre/:genre" component={ResultGenre}/>
         <Route path="/search" component={Search} />
-        <Route path="/movie-details/:id" exact render={(props) => <MovieDetails {...props} ajoutFav={this.ajoutFav} ajoutWatchLater={this.ajoutWatchLater} />} />
+        <Route path="/movie-details/:id" render={(props) => <MovieDetails {...props} ajoutFav={this.ajoutFav} ajoutWatchLater={this.ajoutWatchLater} />} />
         <Route path="/favorites" render={(props) => <Favorite {...props} favorites={this.state.favorites} ajoutFav={this.ajoutFav} />} />
         <Route path="/watch-later" render={(props) => <WatchLater {...props} watchL={this.state.watchL} ajoutWatchLater={this.ajoutWatchLater} />} />
-        <Route path="/i-feel-lucky" exact component={RandomPage}></Route>
+        <Route path="/i-feel-lucky" component={RandomPage}></Route>
         <footer className="foot">
           <Footer />
         </footer>
       </div>
-    /* <Route path="/movie-details/:id" exact component={MovieDetails} /> */ 
     );
   }
 }

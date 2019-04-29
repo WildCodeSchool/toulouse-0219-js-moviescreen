@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Card, Button, CardImg, CardTitle, CardBody, Modal
+import { Card, CardImg, CardTitle, CardBody, Modal
 } from 'reactstrap';
 import './components.css';
 import axios from 'axios';
@@ -43,7 +42,6 @@ class ActorCards extends React.Component {
               <CardImg className="cardimage" top width="100%" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${profile_path}`} alt="Card " onClick={() => this.toggle(id)} />
               <CardBody>
                 <CardTitle className="actorname">{name}</CardTitle>
-                <Button outline color="info" className="buttoncard">See More</Button>
               </CardBody>
             </Card>
           ))}
