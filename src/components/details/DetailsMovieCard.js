@@ -55,17 +55,17 @@ class DetailsMovieCard extends Component {
                 )
               }
             </div>
-            <div className="col-md-8 col-lg-6 p-2">
+            <div className="col-md-8 col-lg-6 px-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
-                <p className="pb-4 pt-4 blush">
-                  Genres :
+                <p className="blush">
+                  Genres:
                   {' '}
                   {this.props.genres.map((genre) => (
                     <span className="my-genre p-2 white">{genre.name}</span>
                   ))}
                 </p>
                 <p className="blush">
-                  Directed by :
+                  Directed by:
                   {' '}
                   {!this.props.directing ? <span className="font-weight-bold white">Unknown</span>
                     : <span className="font-weight-bold white">{this.props.directing.name}</span> }
@@ -78,11 +78,11 @@ class DetailsMovieCard extends Component {
 
                 <p className="card-text blush">
 
-                  Release date :
+                  Release date:
                   {' '}
                   <span className="font-weight-bold white">{release_date}</span>
                 </p>
-                <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
+                <p className="card-text py-4 pb-1 my-overview white">{overview}</p>
                 <p className="my-3 mt-auto blush">
                   Vote:
                   {' '}

@@ -95,7 +95,7 @@ class MovieDetails extends Component {
           <DetailsMovieCard {...this.state.movie} ajoutFav={this.props.ajoutFav} ajoutWatchLater={this.props.ajoutWatchLater} genres={this.state.genres} directing={this.state.directing} />
           <h2>Reviews</h2>
           <Reviews reviews={this.state.reviews} />
-          <h2>Casting</h2>
+          <h2>Cast</h2>
           <CastingCard casting={this.state.casting} />
           <h2>Trailer</h2>
           <Player trailer={this.state.trailer} />

@@ -15,7 +15,7 @@ const FavoriteList = ({ movies, ajoutFav }) => (
                   <CardImg width="100px" top src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`} alt="Card image cap" />
                 </Link>
                 <a onClick={() => ajoutFav(movie.id)} className="btn my-btn btn-block font" >
-                  Delete To My Favorites
+                  Delete From My Favorites
                 </a>
               </Card>
             </Col>
