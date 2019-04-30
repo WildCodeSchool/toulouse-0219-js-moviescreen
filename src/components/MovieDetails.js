@@ -90,7 +90,6 @@ class MovieDetails extends Component {
     );
 
     return (
-      <div className="row">
         <div className="container">
           <DetailsMovieCard {...this.state.movie} ajoutFav={this.props.ajoutFav} ajoutWatchLater={this.props.ajoutWatchLater} genres={this.state.genres} directing={this.state.directing} />
           <h2>Reviews</h2>
@@ -101,7 +100,6 @@ class MovieDetails extends Component {
           <Player trailer={this.state.trailer} />
           <AddComment movieId={this.state.movie.id}/>
         </div>
-      </div>
     );
   }
 }
