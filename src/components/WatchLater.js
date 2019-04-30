@@ -48,4 +48,4 @@ class WatchLater extends React.Component {
   }
 }
 
-export default WatchLater ;
+export default WatchLater;

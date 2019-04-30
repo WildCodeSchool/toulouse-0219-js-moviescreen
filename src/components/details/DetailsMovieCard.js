@@ -17,7 +17,7 @@ class DetailsMovieCard extends Component {
   render() {
     const {
       poster_path,
-      original_title,
+      title,
       overview,
       button1,
       button2,
@@ -31,17 +31,17 @@ class DetailsMovieCard extends Component {
       <div>
         <div className="container detailcontainer">
           <div className="row">
-            <div className="col ml-4 mt-4">
-              <h2>{original_title}</h2>
+            <div className="col ml-5">
+              <h2>{title}</h2>
             </div>
           </div>
         </div>
-        <div className="detailcard card m-4">
+        <div className="detailcard card">
           <div className="row no-gutters m-3">
             <div className="col-md-4 col-lg-6">
               {!poster_path ? (
                 <img
-                  src={`https://via.placeholder.com/514x771?text=${original_title}`}
+                  src={`https://via.placeholder.com/514x771?text=${title}`}
                   className="card-img my-card-img"
                   alt="Poster"
                 />
@@ -55,17 +55,17 @@ class DetailsMovieCard extends Component {
                 )
               }
             </div>
-            <div className="col-md-8 col-lg-6 p-2">
+            <div className="col-md-8 col-lg-6 px-2">
               <div className="card-body my-card-body p-0 pl-lg-3 d-flex flex-column">
-                <p className="pb-4 pt-4 blush">
-                  Genres :
+                <p className="blush">
+                  Genres:
                   {' '}
                   {this.props.genres.map((genre) => (
                     <span className="my-genre p-2 white">{genre.name}</span>
                   ))}
                 </p>
                 <p className="blush">
-                  Directed by :
+                  Directed by:
                   {' '}
                   {!this.props.directing ? <span className="font-weight-bold white">Unknown</span>
                     : <span className="font-weight-bold white">{this.props.directing.name}</span> }
@@ -78,11 +78,11 @@ class DetailsMovieCard extends Component {
 
                 <p className="card-text blush">
 
-                  Release date :
+                  Release date:
                   {' '}
                   <span className="font-weight-bold white">{release_date}</span>
                 </p>
-                <p className="card-text pt-5 pb-1 my-overview white">{overview}</p>
+                <p className="card-text py-4 pb-1 my-overview white">{overview}</p>
                 <p className="my-3 mt-auto blush">
                   Vote:
                   {' '}
@@ -97,10 +97,10 @@ class DetailsMovieCard extends Component {
                     />
                   </div>
                 </p>
-                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn mt-2 buttonfont my-btn btn-block">
+                <button onClick={()=>this.props.ajoutFav(id)} href={button1} className="btn buttonfont my-btn btn-block">
                   <span className="white">Add To My Favorites</span>
                 </button>
-                <button onClick={()=>this.props.ajoutWatchLater(id)} href={button2} className="btn buttonfont my-btn btn-block">
+                <button onClick={()=>this.props.ajoutWatchLater(id)} href={button2} className="btn buttonfont my-btn btn-block mb-2">
                   <span className="white">Add To watch Later</span>
                 </button>
               </div>

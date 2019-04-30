@@ -86,9 +86,19 @@ class AddComment extends React.Component {
           <div className="row">
             <div className="col">
               <h2 className="mb-5">Comments</h2>
-
+              <ul>
+                {this.state.messages.filter((item) => item.movieId === Number(this.props.movieId))
+                .map(
+                  (message) => (
+                    <li>
+                      <DisplayedMessage {...message} delete={this.delete}  />
+                    </li>
+                  )
+                )}
+              </ul>
+              <h3 className="mb-4 mt-5">Add Your Comment</h3>
               <h5 className="my-white-font">Your name</h5>
-              <form onSubmit={this.add}>
+              <form onSubmit={this.add} className="mb-5">
                 <input
                   type="text"
                   placeholder="enter your name"
@@ -117,16 +127,7 @@ class AddComment extends React.Component {
                   className="btn btn-info my-white-font my-3"
                 />
               </form>
-              <ul>
-                {this.state.messages.filter((item) => item.movieId === Number(this.props.movieId))
-                .map(
-                  (message) => (
-                    <li>
-                      <DisplayedMessage {...message} delete={this.delete}  />
-                    </li>
-                  )
-                )}
-              </ul>
+              
             </div>
           </div>
         </div>

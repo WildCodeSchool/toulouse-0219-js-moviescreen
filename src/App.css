@@ -1,3 +1,7 @@
+body {
+  background-color: #000C0B;
+}
+
 .App {
   text-align: center;
   background-color: #000C0B;
@@ -9,7 +13,7 @@
 .nav-pills {
   display: flex;
   list-style-type: none;
-  margin:  auto;
+  margin: auto;
   font-size: 28px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   background-color: transparent;
@@ -55,13 +59,14 @@ background-color: transparent;
 
 .navbarbg {
   background-color: transparent;
-  padding-bottom: 120px;
+  padding-bottom: 40px;
 }
 
 .font{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 20px;
 }
+
 .buttonfont {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 25px;
@@ -91,7 +96,6 @@ h3 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-
 .cardimage, .posterfolio, .trendscol {
   border-radius: 8px;
 }
@@ -108,6 +112,7 @@ h3 {
 
 .my-btn {
   color: #ffffff !important;
+  margin-top: auto;
 }
 
 .castingcard, .castinggroup, .detailcard{
@@ -117,23 +122,24 @@ h3 {
   background-color: transparent;
   color: #B7855F;
 }
+
 .my-genre {
   background-color: transparent;
   border-color: transparent;
   font-size: 25px;
 }
+
 .reviewcard {
   background-color: transparent;
   color: white;
   border-color: #B7855F;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 21px;
-} 
-
+}
 
 .my-review {
   max-height: 250px;
-overflow: auto;
+  overflow: auto;
 }
 
 .castingcard {
@@ -149,8 +155,9 @@ overflow: auto;
 .castingcharacter {
   color: white;
 }
+
 .castingcontainer {
-  margin-bottom: 150px;
+  margin-bottom: 40px;
 }
 
 .moviecard, .actorcard {
@@ -166,8 +173,13 @@ overflow: auto;
   font-size: 25px;
 }
 
+.my-card-body {
+  height: 100%;
+  text-align: left;
+}
+
 .upcomingslidercontainer,.theaterslidercontainer, .trendsportfolio, .actordeckcontainer {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   margin-top: 50px;
   border-radius: 15px;
 }
@@ -177,11 +189,13 @@ overflow: auto;
   margin-top: 50px;
   border-radius: 15px;
 }
+
 .detailcontainer {
   margin-bottom: 50px;
 }
+
 .videoplayer {
-margin-top: 100px;
+margin-top: 50px;
 }
 
 
@@ -201,7 +215,7 @@ margin-top: 100px;
 
 .footercontainer {
   padding-bottom: 30px;
-  padding-top: 300px;
+  padding-top: 30px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .footerquote {

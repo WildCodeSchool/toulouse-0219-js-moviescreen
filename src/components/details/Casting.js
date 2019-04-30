@@ -55,7 +55,7 @@ class Casting extends React.Component {
                 {!profile_path ? (
                   <CardImg
                     className="castingimage"
-                    onClick={this.toggle}
+                    onClick={() => this.toggle(id)}
                     top
                     width="100%"
                     src="https://via.placeholder.com/198x298?text=No+Picture"
@@ -64,7 +64,7 @@ class Casting extends React.Component {
                 ) : (
                   <CardImg
                     className="castingimage"
-                    onClick={this.toggle}
+                    onClick={() => this.toggle(id)}
                     top
                     width="100%"
                     src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${profile_path}`}
